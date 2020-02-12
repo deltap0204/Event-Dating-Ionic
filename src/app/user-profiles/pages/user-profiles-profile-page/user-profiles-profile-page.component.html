@@ -1,0 +1,42 @@
+<ion-content [scrollEvents]="true" class="--bg-primary-mega-light">
+    <ion-row class="m-2">
+        <ion-col [size]="6" class="p-3">
+            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-12 ellipses-2">
+                My Profile
+            </ion-label>
+        </ion-col>
+        <ion-col [size]="6" class="p-3 float-right">
+            <fa-icon class="fs-12 m-2 float-right " [icon]="'sliders-h'" routerLink="/signedin/profile/edit"></fa-icon>
+            <fa-icon class="fs-12 m-2 float-right" [icon]="'cog'" routerLink="/signedin/profile/settings"></fa-icon>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col class="p-3">
+            <images-by-entity-and-type-sm
+                    [entity]="loggedProfile.userAccount._id" [entityType]="'USER_ACCOUNT'"
+                    [alt]="(loggedProfile|usersUserProfileToUserProfileValue:'NAME').value"></images-by-entity-and-type-sm>
+            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-12 ellipses-2 text-center mt-4">
+                {{(loggedProfile|usersUserProfileToUserProfileValue:'NAME').value}}
+            </ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row class="bb-primary-grey-e-1 m-2">
+        <ion-col [size]="12" class="p-3 bt-primary-grey-e-1 fs-10">
+            <user-payments-create-stripe-charge-modal [amount]="100"></user-payments-create-stripe-charge-modal>
+        </ion-col>
+        <ion-col [size]="12" class="p-3 bt-primary-grey-e-1 fs-10">
+            <ion-label class="ellipses-2">
+                <fa-icon icon="share-alt"></fa-icon>
+                Refer or Share app
+                <fa-icon icon="chevron-right" class="float-right font-primary-grey"></fa-icon>
+            </ion-label>
+        </ion-col>
+    </ion-row>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" style="bottom:60px">
+        <events-create-event-modal></events-create-event-modal>
+    </ion-fab>
+
+    <events-get-events></events-get-events>
+
+</ion-content>

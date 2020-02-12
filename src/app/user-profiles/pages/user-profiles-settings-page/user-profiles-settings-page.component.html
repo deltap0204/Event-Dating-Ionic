@@ -1,0 +1,79 @@
+<ion-content [scrollEvents]="true" class="--bg-primary-mega-light">
+    <ion-row class="m-2">
+        <ion-col [size]="12" class="p-3">
+            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-12 ellipses-2">
+                Account Settings
+            </ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12" class="p-3">
+            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-11 ellipses-2">
+                Legal
+            </ion-label>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="bb-primary-grey-e-1 m-2 font-black font-weight-bold fs-10 ellipses-2">
+        <ion-col [size]="2">
+            <fa-icon icon="shield-alt"></fa-icon>
+        </ion-col>
+        <ion-col [size]="8" class="ml-2">
+            <ion-label>
+                Privacy Policy
+            </ion-label>
+        </ion-col>
+        <ion-col [size]="2" class="font-primary-grey float-right">
+            <fa-icon icon="chevron-right"></fa-icon>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="bb-primary-grey-e-1 m-2 font-black font-weight-bold fs-10 ellipses-2">
+        <ion-col [size]="2">
+            <fa-icon icon="gavel"></fa-icon>
+        </ion-col>
+        <ion-col [size]="8" class="ml-2">
+            <ion-label>
+                Terms Of Service
+            </ion-label>
+        </ion-col>
+        <ion-col [size]="2" class="font-primary-grey float-right">
+            <fa-icon icon="chevron-right"></fa-icon>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="bb-primary-grey-e-1 m-2 font-black font-weight-bold fs-10 ellipses-2">
+        <ion-col [size]="2">
+            <fa-icon icon="cookie"></fa-icon>
+        </ion-col>
+        <ion-col [size]="8" class="ml-2">
+            <ion-label>
+                Cookies Policy
+            </ion-label>
+        </ion-col>
+        <ion-col [size]="2" class="font-primary-grey float-right">
+            <fa-icon icon="chevron-right"></fa-icon>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="bb-primary-grey-e-1 m-2 font-black font-weight-bold fs-10 ellipses-2">
+        <ion-col [size]="2">
+            <fa-icon icon="id-badge"></fa-icon>
+        </ion-col>
+        <ion-col [size]="8" class="ml-2">
+            <ion-label>
+                Licences
+            </ion-label>
+        </ion-col>
+        <ion-col [size]="2" class="font-primary-grey float-right">
+            <fa-icon icon="chevron-right"></fa-icon>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="m-2">
+        <ion-col [size]="12" class="p-3">
+            <users-user-cognito-logout (signOutSuccess)="navigateToSignInPage()"></users-user-cognito-logout>
+        </ion-col>
+    </ion-row>
+
+</ion-content>

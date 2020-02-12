@@ -1,0 +1,75 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "paths": {
+      "@core/*": [
+        "src/app/core/*"
+      ],
+      "@basic/*": [
+        "src/app/basic/*"
+      ],
+      "@users/*": [
+        "src/app/users/*"
+      ],
+      "@images/*": [
+        "src/app/images/*"
+      ],
+      "@quickblox/*": [
+        "src/app/quickblox/*"
+      ],
+      "@chat/*": [
+        "src/app/chat/*"
+      ],
+      "@events/*": [
+        "src/app/events/*"
+      ],
+      "@categories/*": [
+        "src/app/categories/*"
+      ],
+      "@user-interests/*": [
+        "src/app/user-interests/*"
+      ],
+      "@user-payments/*": [
+        "src/app/user-payments/*"
+      ],
+
+      "@user-profiles/*": [
+        "src/app/user-profiles/*"
+      ],
+      "@signedin/*": [
+        "src/app/signedin/*"
+      ],
+      "@misc/*": [
+        "src/app/misc/*"
+      ],
+
+      "@environment/*": [
+        "src/environments/*"
+      ],
+      "@angular/*": [
+        "node_modules/@angular/*"
+      ]
+    },
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "event-dating-ionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

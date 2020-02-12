@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <p class="text-center font-weight-bold txt-uppercase fs-12">Verify Your Account</p>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="--bg-primary-ultra-light">
+  <div class="maxw-500p m-auto">
+    <ion-row class="pt-3">
+      <ion-col>
+        <users-user-cognito-confirm-signup [phoneNumber]="user_name$|async"
+                                            (confirmSignUpSuccess)="navigateToSignin()"></users-user-cognito-confirm-signup>
+      </ion-col>
+    </ion-row>
+    <users-user-cognito-resend-signup-confirm [phoneNumber]="user_name$|async"></users-user-cognito-resend-signup-confirm>
+  </div>
+</ion-content>

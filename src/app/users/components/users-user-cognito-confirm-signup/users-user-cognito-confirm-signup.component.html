@@ -1,0 +1,22 @@
+<form [formGroup]="formGroup" #confirmSignUpForm="ngForm" (submit)="confirmSignUp(createRequestData())">
+  <div class="mt-5">
+    <p class="mr-3 ml-3 font-primary-dark">
+      Verification code has been sent to your registered mobile number
+    </p>
+    <div class="pos-relative">
+      <dynamic-ionic-form-control [group]="formGroup"
+                                  [layout]="formLayout"
+                                  [model]="formModelMap['token']" #token></dynamic-ionic-form-control>
+      <core-form-validation-message [controlComponent]="token"
+                                       [control]="token.control"></core-form-validation-message>
+    </div>
+  </div>
+  <div class="pt-3 pr-3 pl-3">
+    <ion-button class="h-3" color="primary" expand="block" type="submit" fill="outline"
+                [promiseBtn]="user_cognito_confirm_sign_up_subscription$"
+                [disabled]="!confirmSignUpForm.valid" [expand]="'block'">
+      Verify
+    </ion-button>
+  </div>
+</form>
+

@@ -1,0 +1,65 @@
+<ion-content [scrollEvents]="true">
+    <ion-row>
+        <ion-col [size]="3" class="p-2" routerLink="/signedin/profile/chats">
+            <fa-icon icon="chevron-left"></fa-icon>
+        </ion-col>
+        <ion-col [size]="6" class="text-center">
+            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-12 ellipses-2">
+                {{((userChatAndOtherProfile$|async).otherProfile|usersUserProfileToUserProfileValue:'NAME').value}}
+            </ion-label>
+        </ion-col>
+    </ion-row>
+
+    <quickblox-get-message-list-and-listener [dialogItem]="dialogItem$|async"
+                                             #messageListAndListenerComponent></quickblox-get-message-list-and-listener>
+    <div class="p-1">
+        <div *ngFor="let message of messageListAndListenerComponent.quickblox_messages">
+            <div>
+                <ion-row *ngIf="message.sender_id == loggedProfile.userAccount.quickbloxId">
+                    <ion-col [size]="10" [offset]="2">
+                        <ion-row class=" bg-primary ml-6 b-2 br-3">
+                            <ion-col [size]="3">
+                                <span class="text-color text-left">
+                                    {{message.date_sent | appTimeFormat:'hh:mm'}}
+                                    </span>
+                            </ion-col>
+                            <ion-col [size]="5">
+                                <p class="p-1 m-0 whitespace-pre-line" [innerHTML]="message.message"></p>
+                            </ion-col>
+                            <ion-col [size]="3" class="float-right">
+                                <images-by-entity-and-type-sm [entity]="loggedProfile.userAccount._id"
+                                                              [entityType]="'USER_ACCOUNT'"
+                                                              [alt]="(loggedProfile|usersUserProfileToUserProfileValue:'NAME').value"></images-by-entity-and-type-sm>
+                            </ion-col>
+
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngIf="message.sender_id != loggedProfile.userAccount.quickbloxId">
+                    <ion-col [size]="10" [offset]="0">
+                        <ion-row class="bg-primary-grey-d b-2 br-3">
+                            <ion-col [size]="3">
+                                <images-by-entity-and-type-sm
+                                        [entity]="(userChatAndOtherProfile$|async).otherProfile.userAccount._id"
+                                        [entityType]="'USER_ACCOUNT'"
+                                        [alt]="((userChatAndOtherProfile$|async).otherProfile|usersUserProfileToUserProfileValue:'NAME').value"></images-by-entity-and-type-sm>
+                            </ion-col>
+                            <ion-col [size]="5">
+                                <p class="p-1 m-0 whitespace-pre-line" [innerHTML]="message.message"></p>
+                            </ion-col>
+                            <ion-col [size]="3">
+                                <span class="text-color float-right text-right">
+                                    {{message.date_sent | appTimeFormat:'hh:mm'}}
+                                    </span>
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+
+            </div>
+        </div>
+    </div>
+
+</ion-content>
+<quickblox-message-create-and-listener
+        [dialogId]="(dialogItem$|async).id"></quickblox-message-create-and-listener>

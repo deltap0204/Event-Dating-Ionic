@@ -1,0 +1,13 @@
+<core-modal-header [title]="'PLAN AN ACTIVITY'" (closeClicked)="closeModal($event)"></core-modal-header>
+<ion-content [scrollEvents]="true" class="--bg-primary-ultra-light">
+    <events-create-event (eventCreated)="registerEffectAndCloseModal($event,{data:$event,status:'SUCCESS'})"
+                         #eventsCreateEventComponent></events-create-event>
+    <categories-all-categories-with-select #allCategoriesWithSelectComponent></categories-all-categories-with-select>
+    <categories-create-category-entity [entityType]="'EVENT'"
+                                       #categoriesCreateCategoryEntityComponent></categories-create-category-entity>
+    <images-upload-file-with-preview [entityType]="'EVENT'"></images-upload-file-with-preview>
+</ion-content>
+<core-modal-footer
+        (actionClicked)="eventsCreateEventComponent.createEvent(eventsCreateEventComponent.createRequestData())"
+        [buttonText]="'ADD ACTIVITY'" [actionPromise]="eventsCreateEventComponent.create_event_subscription$"
+        [buttonDisabled]="!eventsCreateEventComponent.formGroup.valid"></core-modal-footer>

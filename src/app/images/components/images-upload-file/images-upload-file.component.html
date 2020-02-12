@@ -1,0 +1,6 @@
+<images-select-file
+        (fileSelected)="selected_file=$event"
+        (fileReceived)="file_blob=$event;fileReceived.emit($event);createFileUploadRequestComponent.createFileUploadRequest(createFileUploadRequestComponent.createRequestData($event.file.name))"></images-select-file>
+<images-create-file-upload-request [entity]="entity" [entityType]="entityType"
+                                   (fileUploadRequestCreated)="uploaded_file=$event;uploadFileFromBlob(file_blob.blob,$event.fileUploadUrl,createFileUploadRequestComponent.getFileContentType(selected_file.file_name))"
+                                   #createFileUploadRequestComponent></images-create-file-upload-request>

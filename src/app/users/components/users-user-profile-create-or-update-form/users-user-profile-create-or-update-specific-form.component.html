@@ -1,0 +1,14 @@
+<form [formGroup]="formGroup" #profileUpdateForm="ngForm"
+      (submit)="usersUserProfileCreateOrUpdateComponent.createUserProfile(usersUserProfileCreateOrUpdateComponent.createRequestData(createRequestData()))">
+    <ion-row>
+        <ion-col [size]="12">
+            <div class="pos-relative">
+                <dynamic-ionic-form-control [group]="formGroup"
+                                            [model]="formModelMap[entityType]" #profile></dynamic-ionic-form-control>
+                <core-form-validation-message [controlComponent]="profile"
+                                              [control]="profile.control"></core-form-validation-message>
+            </div>
+        </ion-col>
+    </ion-row>
+</form>
+<users-user-profile-create-or-update #usersUserProfileCreateOrUpdateComponent></users-user-profile-create-or-update>

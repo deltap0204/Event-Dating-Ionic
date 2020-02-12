@@ -1,0 +1,22 @@
+<ion-content>
+    <ion-router-outlet></ion-router-outlet>
+</ion-content>
+<ion-footer class="bg-primary">
+    <ion-segment [scrollable]="false" [color]="'primary'" class="app-footer" style="height: 53px">
+        <ion-segment-button routerLink="/signedin/profile/dashboard" [routerDirection]="'root'"
+                            routerLinkActive="segment-button-checked"
+                            class="font-white min-width-unset">
+            <fa-icon class="pr-10 fs-10" icon="home"></fa-icon>
+        </ion-segment-button>
+        <ion-segment-button routerLink="/signedin/profile/chats" [routerDirection]="'root'"
+                            routerLinkActive="segment-button-checked"
+                            class="font-white min-width-unset">
+            <fa-icon class="pr-10 fs-10" icon="comments"></fa-icon>
+        </ion-segment-button>
+        <ion-segment-button routerLink="/signedin/profile/profile" [routerDirection]="'root'"
+                            routerLinkActive="segment-button-checked"
+                            class="font-white min-width-unset">
+            <fa-icon class="pr-10 fs-10" icon="user"></fa-icon>
+        </ion-segment-button>
+    </ion-segment>
+</ion-footer>

@@ -1,0 +1,95 @@
+<users-all-users-profiles-no-template #allUsersProfilesNoTemplateComponentcore></users-all-users-profiles-no-template>
+<ion-content [scrollEvents]="true" class="--bg-primary-mega-light">
+    <div *ngIf="allUsersProfilesNoTemplateComponentcore.user_profiles?.length">
+        <div *ngFor="let user_profile of (allUsersProfilesNoTemplateComponentcore.user_profiles|appArrayRandomItem|appConvertToArray)">
+            <div *ngIf="user_profile">
+                <ion-row>
+                    <ion-col [size]="6" class="p-3">
+                        <ion-label class="font-black font-weight-bold ion-text-uppercase fs-12 ellipses-2">
+                            {{(user_profile|usersUserProfileToUserProfileValue:'NAME').value}}
+                        </ion-label>
+                    </ion-col>
+                    <ion-col [size]="6" class="p-3">
+                        <ion-label class="font-black div-pull-right ion-text-uppercase fs-10 ellipses-2">
+                            Toronto
+                            <fa-icon [icon]="'map-marker-alt'"></fa-icon>
+                        </ion-label>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class="p-3">
+                        <images-by-entity-and-type-xl
+                                [entity]="user_profile.userAccount._id"
+                                [entityType]="'USER_ACCOUNT'"
+                                [alt]="(user_profile|usersUserProfileToUserProfileValue:'NAME').value"></images-by-entity-and-type-xl>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col [size]="6" class="text-center">
+                        <ion-row class="text-center mb-2">
+                            <user-interests-get-or-create-with-delete-heart class="m-auto"
+                                                                      (userInterestDeleted)="allUsersProfilesNoTemplateComponentcore.getAllUserProfiles(allUsersProfilesNoTemplateComponentcore.createRequestData())"
+                                                                      (userInteractionCreated)="allUsersProfilesNoTemplateComponentcore.getAllUserProfiles(allUsersProfilesNoTemplateComponentcore.createRequestData())"
+                                                                      [type]="'USER_ACCOUNT'"
+                                                                      [entity]="user_profile.userAccount._id"
+                                                                      [interaction]="'LIKED'"></user-interests-get-or-create-with-delete-heart>
+                        </ion-row>
+                    </ion-col>
+                    <ion-col [size]="6">
+                        <ion-row class="text-center mb-2">
+                            <ion-button fill="outline" shape="round" size="large" color="medium" class="m-auto"
+                                        (click)="allUsersProfilesNoTemplateComponentcore.getAllUserProfiles(allUsersProfilesNoTemplateComponentcore.createRequestData())"
+                            >
+                                <fa-icon icon="times"></fa-icon>
+                            </ion-button>
+                        </ion-row>
+                    </ion-col>
+
+                </ion-row>
+                <ion-row>
+                    <ion-col [size]="12" class="p-3">
+                        <ion-label class="font-black font-weight-bold ion-text-uppercase fs-10 ellipses-2">
+                            ABOUT ME
+                        </ion-label>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col [size]="3">
+                        <users-user-profile-value-fa-icon
+                                [userProfileValue]="(user_profile|usersUserProfileToUserProfileValue:'AGE')"></users-user-profile-value-fa-icon>
+                    </ion-col>
+                    <ion-col [size]="3">
+                        <users-user-profile-value-fa-icon-gender
+                                [userProfileValue]="(user_profile|usersUserProfileToUserProfileValue:'GENDER')"></users-user-profile-value-fa-icon-gender>
+                    </ion-col>
+                    <ion-col [size]="3">
+                        <users-user-profile-value-fa-icon
+                                [userProfileValue]="(user_profile|usersUserProfileToUserProfileValue:'DRINKING')"></users-user-profile-value-fa-icon>
+
+                    </ion-col>
+                    <ion-col [size]="3">
+                        <users-user-profile-value-fa-icon
+                                [userProfileValue]="(user_profile|usersUserProfileToUserProfileValue:'SMOKING')"></users-user-profile-value-fa-icon>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="mt-4">
+                    <users-user-profile-value
+                            [userProfileValue]="user_profile|usersUserProfileToUserProfileValue:'WORK'"></users-user-profile-value>
+                    <users-user-profile-value
+                            [userProfileValue]="user_profile|usersUserProfileToUserProfileValue:'JOB_TITLE'"></users-user-profile-value>
+                </ion-row>
+                <ion-row class="mt-4">
+                    <ion-col [size]="12" class="p-3">
+                        <ion-label class="font-black font-weight-bold ion-text-uppercase fs-10 ellipses-2">
+                            After Work You can Find me
+                        </ion-label>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <users-user-profile-value-fa-icon-quote></users-user-profile-value-fa-icon-quote>
+                </ion-row>
+                <events-get-events></events-get-events>
+            </div>
+        </div>
+    </div>
+</ion-content>

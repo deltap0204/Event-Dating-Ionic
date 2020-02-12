@@ -1,0 +1,24 @@
+.app-footer > .segment-button-checked {
+  background: var(--primary-dark) !important;
+}
+
+.app-footer > ion-segment-button {
+  --padding-end: 0 !important;
+  --padding-start: 0 !important;
+}
+
+.app-footer > .segment-button-checked {
+  background: var(--primary-dark) !important;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-inline {
+  display: inline;
+}

@@ -1,0 +1,45 @@
+{
+  "extends": "../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      [
+        "app",
+        "core",
+        "users",
+        "images",
+        "quickblox",
+        "chats",
+        "events",
+        "categories",
+        "userInterests",
+        "signedin",
+        "userProfiles",
+        "userPayments",
+        "misc"
+      ],
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      [
+        "app",
+        "core",
+        "users",
+        "images",
+        "quickblox",
+        "chats",
+        "events",
+        "categories",
+        "user-interests",
+        "signedin",
+        "user-profiles",
+        "user-payments",
+        "misc"
+      ],
+      "kebab-case"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+<form [formGroup]="formGroup" #updateForm="ngForm"
+      (submit)="usersUserProfileCreateOrUpdateComponent.createUserProfile(usersUserProfileCreateOrUpdateComponent.createRequestData(createRequestData()))">
+    <dynamic-ionic-form [group]="formGroup" [model]="formModel"></dynamic-ionic-form>
+    <ion-row class="pt-2">
+        <ion-col [size]="12" class="pt-2 pr-3 pl-3">
+            <ion-button class="h-3" color="primary" expand="block" type="submit" fill="outline"
+                        [disabled]="!updateForm.valid">
+                Update
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</form>
+<users-user-profile-create-or-update #usersUserProfileCreateOrUpdateComponent></users-user-profile-create-or-update>

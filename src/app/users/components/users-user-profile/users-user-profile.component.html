@@ -1,0 +1,6 @@
+<div *ngIf="userProfile">
+    <ion-col size="4" class="mr-2" *ngFor="let user_profile_value of userProfile?.profile">
+        <users-user-profile-value-fa-icon  class="b-2" [userProfileValue]="user_profile_value"
+                                          *ngIf="user_profile_value|usersUserProfileEntryNameToIcon"></users-user-profile-value-fa-icon>
+    </ion-col>
+</div>

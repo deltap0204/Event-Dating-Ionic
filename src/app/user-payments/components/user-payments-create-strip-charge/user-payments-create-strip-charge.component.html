@@ -1,0 +1,7 @@
+<div class="w-100">
+    <form [formGroup]="formGroup" #createStripeTokenForm="ngForm" (submit)="createStripeToken(createRequestData())"
+          class="mt-2">
+        <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
+    </form>
+</div>
+

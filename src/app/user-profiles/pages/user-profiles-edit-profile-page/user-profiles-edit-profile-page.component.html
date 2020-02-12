@@ -1,0 +1,138 @@
+<ion-content [scrollEvents]="true" class="--bg-primary-mega-light">
+    <ion-row class="m-2">
+        <ion-col [size]="6" class="p-3">
+            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-12 ellipses-2">
+                Edit Profile
+            </ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col class="p-3">
+            <images-by-entity-and-type-with-edit
+                    [entity]="loggedProfile.userAccount._id" [entityType]="'USER_ACCOUNT'" [maxCount]="6"
+                    [alt]="(loggedProfile|usersUserProfileToUserProfileValue:'NAME').value"></images-by-entity-and-type-with-edit>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="6" class="p-3">
+            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-11 ellipses-2">
+                My Virtues
+            </ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'WORK'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'JOB_TITLE'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'SCHOOL'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'EDUCATION_LEVEL'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'RELIGIOUS_BELIEFS'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+
+
+    <ion-row class="m-2">
+        <ion-col [size]="6" class="p-3">
+            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-11 ellipses-2">
+                My Vitals
+            </ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'NAME'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'GENDER'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'AGE'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'HEIGHT'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'KIDS'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'FAMILY_PLANS'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="m-2">
+        <ion-col [size]="6" class="p-3">
+            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-11 ellipses-2">
+                My Vices
+            </ion-label>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'DRINKING'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'SMOKING'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'MARIJUANA'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'DRUGS'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+    <ion-row class="m-2">
+        <ion-col [size]="12">
+            <users-user-profile-create-or-update-modal [entityType]="'RELIGIOUS_BELIEFS'"
+                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
+        </ion-col>
+    </ion-row>
+
+</ion-content>
