@@ -21,6 +21,14 @@
             <div class="pos-relative">
                 <dynamic-ionic-form-control [group]="formGroup"
                                             [layout]="formLayout"
+                                            [model]="formModelMap['location']"
+                                            #eventLocation></dynamic-ionic-form-control>
+                <core-form-validation-message [controlComponent]="eventLocation"
+                                              [control]="eventLocation.control"></core-form-validation-message>
+            </div>
+            <div class="pos-relative">
+                <dynamic-ionic-form-control [group]="formGroup"
+                                            [layout]="formLayout"
                                             [model]="formModelMap['event_start_time']"
                                             #eventStartTime></dynamic-ionic-form-control>
                 <core-form-validation-message [controlComponent]="eventStartTime"

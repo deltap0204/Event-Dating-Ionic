@@ -22,7 +22,7 @@ export class UsersUserProfileCreateOrUpdateModalComponent extends BaseModalCompo
 
     async openModal() {
         this.setModalData('entityType', this.entityType);
-        this.setModalData('userProfile', this.userProfile);
+        this.setModalData('userProfile', this.userProfile);console.log(this.userProfile);
         await super.open(UsersUserProfileCreateOrUpdateModalContentComponent);
     }
 
