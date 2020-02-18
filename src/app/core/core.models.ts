@@ -73,20 +73,20 @@ export namespace Users {
 
     @JsonObject()
     export class LocationValue {
-        @JsonProperty('latitude', Number, true)
-        latitude: number = undefined;
-        @JsonProperty('longitude', Number, true)
-        longitude: number = undefined;
+        @JsonProperty('latitude', String, true)
+        latitude: string = undefined;
+        @JsonProperty('longitude', String, true)
+        longitude: string = undefined;
     }
 
     @JsonConverter
     export class ArrayToLocationValueConverter implements JsonCustomConvert<LocationValue> {
-        serialize(time: LocationValue): number[] {
+        serialize(time: LocationValue): string[] {
             return [time.longitude,
                 time.latitude];
         }
 
-        deserialize(time: number[]): LocationValue {
+        deserialize(time: string[]): LocationValue {
             const value = new LocationValue();
             value.longitude = time[0];
             value.latitude = time[1];
@@ -99,7 +99,7 @@ export namespace Users {
     export class UserProfile extends CoreEntity {
         @JsonProperty('profileEntries', [UserProfileValue], true)
         profile: UserProfileValue[] = undefined;
-        @JsonProperty('location', ArrayToLocationValueConverter, true)
+        @JsonProperty('location', LocationValue, true)
         location: LocationValue = undefined;
         @JsonProperty('userAccount', UserAccount)
         userAccount: UserAccount = undefined;
@@ -160,7 +160,7 @@ export namespace Events {
         eventEndTime: Moment = undefined;
         @JsonProperty('eventType', String, true)
         eventType: string = undefined;
-        @JsonProperty('location', ArrayToLocationValueConverter, true)
+        @JsonProperty('location', LocationValue, true)
         location: LocationValue = undefined;
 
     }

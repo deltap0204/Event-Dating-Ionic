@@ -1,6 +1,6 @@
 import {AbstractControl, ValidationErrors} from '@angular/forms';
 import validator from 'validator';
-import passwordValidator from 'password-validator';
+// import passwordValidator from 'password-validator';
 
 export namespace FormValidations {
 
@@ -18,7 +18,7 @@ export namespace FormValidations {
 
     export function appPasswordValidator(control: AbstractControl): ValidationErrors | null {
 
-        const schema = new passwordValidator();
+        /*const schema = new passwordValidator();
 
         schema
             .is().min(6)                                    // Minimum length 8
@@ -29,7 +29,8 @@ export namespace FormValidations {
 
         const isValid = control.value ? (schema.validate(control.value)) : false;
 
-        return isValid ? null : {appPasswordValidator: true};
+        return isValid ? null : {appPasswordValidator: true};*/
+        return null;
     }
 
 
