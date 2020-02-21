@@ -8,7 +8,6 @@ import {UsersUserProfileCreateOrUpdateComponent} from '@users/components/users-u
 import {UserConstants} from '@users/users.constants';
 import UserProfileValue = Users.UserProfileValue;
 import UserProfile = Users.UserProfile;
-import LocationValue = Users.LocationValue;
 
 @Component({
     selector: 'users-user-profile-create-or-update-form',
@@ -22,8 +21,6 @@ export class UsersUserProfileCreateOrUpdateFormComponent extends FormComponent {
 
     @ViewChild(UsersUserProfileCreateOrUpdateComponent, {static: true})
     users_user_profile_create_or_update_component: UsersUserProfileCreateOrUpdateComponent;
-
-    
 
     constructor(injector: Injector) {
         super(injector);
@@ -93,25 +90,13 @@ export class UsersUserProfileCreateOrUpdateSpecificFormComponent extends UsersUs
     @Input()
     userProfileValue: UserProfileValue;
 
-    lat: string;
-    long: string;
 
     createRequestData(entity_type?: string): Users.UserProfileValue[] {
         const array = [];
         entity_type = entity_type || this.entityType;
-        if(entity_type == 'LOCATION') {
-            array.push(
-            this.users_user_profile_create_or_update_component.createLocationEntry(entity_type, this.lat, this.long));
-        } else {
-            array.push(
+        array.push(
             this.users_user_profile_create_or_update_component.createProfileEntry(entity_type,
                 this.getInputModelValueAsString(entity_type), 'PUBLIC'));
-        }
         return array;
-    }
-
-    getAddress(place: object) {
-        this.lat = String(place['geometry'].location.lat());
-        this.long = String(place['geometry'].location.lng());
     }
 }

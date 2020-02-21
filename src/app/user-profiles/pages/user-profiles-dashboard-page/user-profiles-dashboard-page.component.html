@@ -28,11 +28,17 @@
                     <ion-col [size]="6" class="text-center">
                         <ion-row class="text-center mb-2">
                             <user-interests-get-or-create-with-delete-heart class="m-auto"
-                                                                      (userInterestDeleted)="allUsersProfilesNoTemplateComponentcore.getAllUserProfiles(allUsersProfilesNoTemplateComponentcore.createRequestData())"
-                                                                      (userInteractionCreated)="allUsersProfilesNoTemplateComponentcore.getAllUserProfiles(allUsersProfilesNoTemplateComponentcore.createRequestData())"
-                                                                      [type]="'USER_ACCOUNT'"
-                                                                      [entity]="user_profile.userAccount._id"
-                                                                      [interaction]="'LIKED'"></user-interests-get-or-create-with-delete-heart>
+                                                                            (userInterestDeleted)="allUsersProfilesNoTemplateComponentcore.getAllUserProfiles(allUsersProfilesNoTemplateComponentcore.createRequestData())"
+                                                                            (userInteractionCreated)="checkUserMatchNoTemplateComponent.checkUserMatch(checkUserMatchNoTemplateComponent.createRequestData(user_profile.userAccount._id))"
+                                                                            [type]="'USER_ACCOUNT'"
+                                                                            [entity]="user_profile.userAccount._id"
+                                                                            [interaction]="'LIKED'"></user-interests-get-or-create-with-delete-heart>
+                            <user-interests-check-user-match-no-template
+                                    (userMatchResultReceived)="!$event.matched?matchedModalNoTemplateComponent.openModal(loggedProfile,user_profile):allUsersProfilesNoTemplateComponentcore.getAllUserProfiles(allUsersProfilesNoTemplateComponentcore.createRequestData())"
+                                    #checkUserMatchNoTemplateComponent></user-interests-check-user-match-no-template>
+                            <user-profiles-user-matched-modal-no-template
+                                    (closeResult)="allUsersProfilesNoTemplateComponentcore.getAllUserProfiles(allUsersProfilesNoTemplateComponentcore.createRequestData())"
+                                    #matchedModalNoTemplateComponent></user-profiles-user-matched-modal-no-template>
                         </ion-row>
                     </ion-col>
                     <ion-col [size]="6">

@@ -11,9 +11,17 @@ import {ImagesModule} from '@images/images.module';
 import {EventsModule} from '@events/events.module';
 import {ChatModule} from '@chat/chat.module';
 import {UserProfilesSettingsPageComponent} from '@user-profiles/pages/user-profiles-settings-page/user-profiles-settings-page.component';
+// tslint:disable-next-line:max-line-length
 import {UserProfilesEditProfilePageComponent} from '@user-profiles/pages/user-profiles-edit-profile-page/user-profiles-edit-profile-page.component';
 import {UserPaymentsModule} from '@user-payments/user-payments.module';
 import {UserInterestsModule} from '@user-interests/user-interests.module';
+// tslint:disable-next-line:max-line-length
+import {UserProfilesUserMatchedModalContentComponent} from '@user-profiles/components/user-profiles-user-matched-modal/user-profiles-user-matched-modal-content/user-profiles-user-matched-modal-content.component';
+import {
+    UserProfilesUserMatchedModalComponent,
+    UserProfilesUserMatchedModalNoTemplateComponent
+} from '@user-profiles/components/user-profiles-user-matched-modal/user-profiles-user-matched-modal.component';
+import {UserProfilesUserMatchedComponent} from '@user-profiles/components/user-profiles-user-matched/user-profiles-user-matched.component';
 
 
 @NgModule({
@@ -23,7 +31,11 @@ import {UserInterestsModule} from '@user-interests/user-interests.module';
         UserProfilesProfilePageComponent,
         UserProfilesChatsPageComponent,
         UserProfilesSettingsPageComponent,
-        UserProfilesEditProfilePageComponent
+        UserProfilesEditProfilePageComponent,
+        UserProfilesUserMatchedModalComponent,
+        UserProfilesUserMatchedModalContentComponent,
+        UserProfilesUserMatchedModalNoTemplateComponent,
+        UserProfilesUserMatchedComponent
     ],
     imports: [
         CoreModule,
@@ -41,8 +53,14 @@ import {UserInterestsModule} from '@user-interests/user-interests.module';
         UserProfilesProfilePageComponent,
         UserProfilesChatsPageComponent,
         UserProfilesSettingsPageComponent,
-        UserProfilesEditProfilePageComponent
+        UserProfilesEditProfilePageComponent,
+        UserProfilesUserMatchedModalComponent,
+        UserProfilesUserMatchedModalContentComponent,
+        UserProfilesUserMatchedModalNoTemplateComponent
     ],
+    entryComponents: [
+        UserProfilesUserMatchedModalContentComponent
+    ]
 })
 export class UserProfilesModule {
 }

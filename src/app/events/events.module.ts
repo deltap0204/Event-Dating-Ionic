@@ -29,7 +29,6 @@ import {UserInterestsGetOrCreateWithDeleteComponent} from '@user-interests/compo
 import {CategoriesModule} from '@categories/categories.module';
 
 
-
 @NgModule({
     declarations: [EventsPipe,
         EventsCreateEventComponent,
@@ -53,7 +52,7 @@ import {CategoriesModule} from '@categories/categories.module';
         RouterModule.forChild(EVENTS_ROUTES),
         UserInterestsModule,
         ChatModule,
-        CategoriesModule
+        CategoriesModule,
     ],
     exports: [EventsPipe,
         EventsCreateEventComponent,

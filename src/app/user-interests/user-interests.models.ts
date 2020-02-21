@@ -99,7 +99,7 @@ export namespace UserInterestsRequests {
 
         @JsonObject()
         export class Request {
-            @JsonProperty('type', String,true)
+            @JsonProperty('type', String, true)
             type: string = undefined;
             @JsonProperty('entity', String, true)
             entity: string = undefined;
@@ -114,6 +114,23 @@ export namespace UserInterestsRequests {
         @JsonObject()
         export class Response extends UserInterest {
         }
+    }
+
+    export namespace CheckUserMatch {
+        import UserInterest = UserInterests.UserInterest;
+
+        @JsonObject()
+        export class Request {
+            @JsonProperty('user', String, true)
+            user: string = undefined;
+        }
+
+        @JsonObject()
+        export class Response {
+            @JsonProperty('matched', Boolean, true)
+            matched: boolean = undefined;
+        }
+
     }
 
 }

@@ -26,8 +26,6 @@ export class EventsCreateEventComponent extends FormComponent {
     formLayout: DynamicFormLayout = EVENTS_CREATE_EVENT_FORM_LAYOUT;
 
     create_event_subscription$: Subscription;
-    lat: string;
-    long: string;
 
     constructor(protected eventsService: EventsService, injector: Injector) {
         super(injector);
@@ -52,10 +50,7 @@ export class EventsCreateEventComponent extends FormComponent {
         request.eventType = event_type || this.getInputModelValueAsString('event_type');
         request.eventStartTime = event_start_time || this.getDateModelValue('event_start_time');
         request.eventEndTime = event_end_time || this.getDateModelValue('event_end_time');
-        location = new LocationValue();
-        location.latitude = location.latitude || this.lat;
-        location.longitude = location.longitude || this.long;
-        request.location = location;
+
         return request;
     }
 
@@ -66,11 +61,6 @@ export class EventsCreateEventComponent extends FormComponent {
                     this.eventCreated.emit(value);
                     this.notificationsService.success('Event created');
                 });
-    }
-
-    getAddress(place: object) {
-        this.lat = String(place['geometry'].location.lat());
-        this.long = String(place['geometry'].location.lng());
     }
 
 }

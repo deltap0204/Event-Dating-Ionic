@@ -1,6 +1,7 @@
 import {Component, Injector, Input} from '@angular/core';
 import {BaseModalComponent} from '@core/components/modals/base-modal.component';
 import {Users} from '@core/core.models';
+// tslint:disable-next-line:max-line-length
 import {UsersUserProfileCreateOrUpdateModalContentComponent} from '@users/components/users-user-profile-create-or-update-modal/users-user-profile-create-or-update-modal-content/users-user-profile-create-or-update-modal-content.component';
 import UserProfile = Users.UserProfile;
 
