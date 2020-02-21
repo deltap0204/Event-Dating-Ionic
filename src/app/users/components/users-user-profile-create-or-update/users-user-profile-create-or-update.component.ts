@@ -47,8 +47,6 @@ export class UsersUserProfileCreateOrUpdateComponent extends BaseComponent {
                       location?: LocationValue): CreateUserProfile.Request {
         const request = new CreateUserProfile.Request();
         request.profile = CommonsService.convertToArray(profile_value);
-        request.location = location;
-
         return request;
     }
 
@@ -58,5 +56,12 @@ export class UsersUserProfileCreateOrUpdateComponent extends BaseComponent {
             .subscribe(value => {
                 this.userProfileCreated.emit(value);
             });
+    }
+
+    createLocationEntry(entry_type?: string, lat?: string, long?: string): LocationValue {
+        const location = new LocationValue();
+        location.latitude = location.latitude || lat;
+        location.longitude = location.longitude || long;
+        return location;
     }
 }

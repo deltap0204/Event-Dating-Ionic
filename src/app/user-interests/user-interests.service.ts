@@ -10,7 +10,6 @@ import GetUserInterestsByEntityCount = UserInterestsRequests.GetUserInterestsByE
 import GetUserInterestsByEntityMultiple = UserInterestsRequests.GetUserInterestsByEntityMultiple;
 import GetUserSimilarInterests = UserInterestsRequests.GetUserSimilarInterests;
 import DeleteUserInterest = UserInterestsRequests.DeleteUserInterest;
-import CheckUserMatch = UserInterestsRequests.CheckUserMatch;
 
 @Injectable({
     providedIn: 'root'
@@ -52,8 +51,5 @@ export class UserInterestsService extends RestService {
         return this.userInterestsService.one('similar').customGET('', this.serialize(request));
     }
 
-    checkUserMatch(request: CheckUserMatch.Request) {
-        return this.userInterestsService.one('match').customGET('', this.serialize(request));
-    }
 
 }

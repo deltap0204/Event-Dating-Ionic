@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserProfilesUserMatchedComponent } from './user-profiles-user-matched.component';
+import { GooglePlacesComponent } from './google-places.component';
 
-describe('UserProfilesUserMatchedComponent', () => {
-  let component: UserProfilesUserMatchedComponent;
-  let fixture: ComponentFixture<UserProfilesUserMatchedComponent>;
+describe('GooglePlacesComponent', () => {
+  let component: GooglePlacesComponent;
+  let fixture: ComponentFixture<GooglePlacesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserProfilesUserMatchedComponent ],
+      declarations: [ GooglePlacesComponent ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserProfilesUserMatchedComponent);
+    fixture = TestBed.createComponent(GooglePlacesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

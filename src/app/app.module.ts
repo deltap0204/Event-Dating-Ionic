@@ -23,7 +23,7 @@ import {environment} from '@environment/environment';
 
 @NgModule({
     declarations: [AppComponent,
-        BasicRoutineHelperComponent,],
+        BasicRoutineHelperComponent],
     entryComponents: [],
     imports: [BrowserModule,
         BrowserAnimationsModule,

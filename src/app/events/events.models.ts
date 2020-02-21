@@ -22,7 +22,7 @@ export namespace EventRequests {
             eventName: string = undefined;
             @JsonProperty('eventStartTime', DateTimeConverter)
             eventStartTime: Moment = undefined;
-            @JsonProperty('location', ArrayToLocationValueConverter, true)
+            @JsonProperty('location', LocationValue, true)
             location: LocationValue = undefined;
             @JsonProperty('eventType', String, true)
             eventType: string = undefined;

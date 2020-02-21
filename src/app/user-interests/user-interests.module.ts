@@ -2,8 +2,7 @@ import {NgModule} from '@angular/core';
 import {
     UserInterestsFilterUserInterestByEntityPipe,
     UserInterestsFilterUserInterestByInteractionPipe,
-    UserInterestsPipe,
-    UserInterestsRemoveUserInterestByAccountPipe,
+    UserInterestsPipe, UserInterestsRemoveUserInterestByAccountPipe,
     UserInterestsRemoveUserInterestFromArrayPipe
 } from '@user-interests/user-interests.pipe';
 import {CoreModule} from '@core/core.module';
@@ -36,11 +35,6 @@ import {
     UserInterestsDeleteUserInterestComponent,
     UserInterestsDeleteUserInterestNoTemplateComponent
 } from '@user-interests/components/user-interests-delete-user-interest/user-interests-delete-user-interest.component';
-// tslint:disable-next-line:max-line-length
-import {
-    UserInterestsCheckUserMatchComponent,
-    UserInterestsCheckUserMatchNoTemplateComponent
-} from '@user-interests/components/user-interests-check-user-match/user-interests-check-user-match.component';
 
 
 @NgModule({
@@ -61,9 +55,7 @@ import {
         UserInterestsRemoveUserInterestFromArrayPipe,
         UserInterestsSimilarInterestsNoTemplateComponent,
         UserInterestsRemoveUserInterestByAccountPipe,
-        UserInterestsGetOrCreateWithDeleteHeartComponent,
-        UserInterestsCheckUserMatchComponent,
-        UserInterestsCheckUserMatchNoTemplateComponent
+        UserInterestsGetOrCreateWithDeleteHeartComponent
     ],
     imports: [
         CoreModule
@@ -85,9 +77,7 @@ import {
         UserInterestsRemoveUserInterestFromArrayPipe,
         UserInterestsSimilarInterestsNoTemplateComponent,
         UserInterestsRemoveUserInterestByAccountPipe,
-        UserInterestsGetOrCreateWithDeleteHeartComponent,
-        UserInterestsCheckUserMatchComponent,
-        UserInterestsCheckUserMatchNoTemplateComponent
+        UserInterestsGetOrCreateWithDeleteHeartComponent
     ],
 
 })

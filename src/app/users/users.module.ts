@@ -53,7 +53,7 @@ import {
     UsersAllUsersProfilesComponent,
     UsersAllUsersProfilesNoTemplateComponent
 } from '@users/components/users-all-users-profiles/users-all-users-profiles.component';
-
+import {AutocompleteComponent} from '@basic/components/google-places/google-places.component';
 
 @NgModule({
     declarations: [
@@ -87,7 +87,8 @@ import {
         UsersUserProfileEntryNameToHumanReadablePipe,
         UsersUserProfileCreateOrUpdateSpecificFormComponent,
         UsersAllUsersProfilesComponent,
-        UsersAllUsersProfilesNoTemplateComponent
+        UsersAllUsersProfilesNoTemplateComponent,
+        AutocompleteComponent
     ],
     imports: [
         CoreModule,
@@ -125,7 +126,8 @@ import {
         UsersUserProfileEntryNameToHumanReadablePipe,
         UsersUserProfileCreateOrUpdateSpecificFormComponent,
         UsersAllUsersProfilesComponent,
-        UsersAllUsersProfilesNoTemplateComponent
+        UsersAllUsersProfilesNoTemplateComponent,
+        AutocompleteComponent
 
     ],
     entryComponents: [UsersUserProfileCreateOrUpdateModalContentComponent]
