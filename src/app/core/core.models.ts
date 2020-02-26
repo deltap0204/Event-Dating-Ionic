@@ -68,7 +68,7 @@ export namespace Users {
         @JsonProperty('privacy', String, true)
         privacy: string = undefined;
         @JsonProperty('value', StringOrNumberConverter, true)
-        value: string | number |LocationValue = undefined;
+        value: string | number = undefined;
     }
 
     @JsonObject()
