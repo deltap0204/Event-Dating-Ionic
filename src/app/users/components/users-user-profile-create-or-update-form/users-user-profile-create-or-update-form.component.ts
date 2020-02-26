@@ -1,11 +1,11 @@
-import {Component, EventEmitter, Injector, Input, Output, ViewChild} from '@angular/core';
-import {FormComponent} from '@core/components/form.component';
-import {DynamicFormControlModel} from '@ng-dynamic-forms/core';
-import {USER_PROFILE_CREATE_OR_UPDATE} from '@users/users.form.models';
-import {Users} from '@core/core.models';
+import { Component, EventEmitter, Injector, Input, Output, ViewChild } from '@angular/core';
+import { FormComponent } from '@core/components/form.component';
+import { DynamicFormControlModel } from '@ng-dynamic-forms/core';
+import { USER_PROFILE_CREATE_OR_UPDATE } from '@users/users.form.models';
+import { Users } from '@core/core.models';
 // tslint:disable-next-line:max-line-length
-import {UsersUserProfileCreateOrUpdateComponent} from '@users/components/users-user-profile-create-or-update/users-user-profile-create-or-update.component';
-import {UserConstants} from '@users/users.constants';
+import { UsersUserProfileCreateOrUpdateComponent } from '@users/components/users-user-profile-create-or-update/users-user-profile-create-or-update.component';
+import { UserConstants } from '@users/users.constants';
 import UserProfileValue = Users.UserProfileValue;
 import UserProfile = Users.UserProfile;
 import LocationValue = Users.LocationValue;
@@ -20,10 +20,10 @@ export class UsersUserProfileCreateOrUpdateFormComponent extends FormComponent {
     @Output()
     userProfileChanged = new EventEmitter<UserProfile>();
 
-    @ViewChild(UsersUserProfileCreateOrUpdateComponent, {static: true})
+    @ViewChild(UsersUserProfileCreateOrUpdateComponent, { static: true })
     users_user_profile_create_or_update_component: UsersUserProfileCreateOrUpdateComponent;
 
-    
+
 
     constructor(injector: Injector) {
         super(injector);
@@ -97,15 +97,21 @@ export class UsersUserProfileCreateOrUpdateSpecificFormComponent extends UsersUs
     long: string;
 
     createRequestData(entity_type?: string): Users.UserProfileValue[] {
-        const array = [];
+        let array = [];
         entity_type = entity_type || this.entityType;
-        if(entity_type == 'LOCATION') {
+        if (entity_type == 'WORK') {
+            // alert('LOCATION');
+            // console.log(array);
+            // array.push(
+            //     this.users_user_profile_create_or_update_component.createProfileEntry(entity_type,
+            //         this.getInputModelValueAsString(entity_type), 'PUBLIC'));
             array.push(
-            this.users_user_profile_create_or_update_component.createLocationEntry(entity_type, this.lat, this.long));
+                this.users_user_profile_create_or_update_component.createLocationEntry(entity_type,
+                    this.getInputModelValueAsString(entity_type), 'PUBLIC', this.lat, this.long));
         } else {
             array.push(
-            this.users_user_profile_create_or_update_component.createProfileEntry(entity_type,
-                this.getInputModelValueAsString(entity_type), 'PUBLIC'));
+                this.users_user_profile_create_or_update_component.createProfileEntry(entity_type,
+                    this.getInputModelValueAsString(entity_type), 'PUBLIC'));
         }
         return array;
     }

@@ -73,13 +73,13 @@ export class ImagesSelectFileComponent extends BaseComponent {
   }
 
   makeFileUrlIntoFile(imagePath) {
-    File.resolveLocalFilesystemUrl(imagePath).then((fileEntry) => {
+   /* File.resolveLocalFilesystemUrl(imagePath).then((fileEntry) => {
 // @ts-ignore
       fileEntry.file((resFile) => {
         console.log(resFile);
         this.readFile(resFile);
       });
-    });
+    }); */
   }
 
   readFile(file: any) {

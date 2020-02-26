@@ -2,6 +2,8 @@ import {NgModule} from '@angular/core';
 import {CoreModule} from '@core/core.module';
 import {RouterModule} from '@angular/router';
 import {USER_ROUTES} from '@users/users.routes';
+
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import {UsersUserCognitoLoginComponent} from '@users/components/users-user-cognito-login/users-user-cognito-login.component';
 import {UsersUserSigninPageComponent} from '@users/pages/users-user-signin-page/users-user-signin-page.component';
 import {UsersUserCognitoSignupComponent} from '@users/components/users-user-cognito-signup/users-user-cognito-signup.component';
@@ -91,6 +93,7 @@ import {AutocompleteComponent} from '@basic/components/google-places/google-plac
         AutocompleteComponent
     ],
     imports: [
+        GooglePlaceModule,
         CoreModule,
         RouterModule.forChild(USER_ROUTES),
         ImagesModule

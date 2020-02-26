@@ -29,7 +29,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         return this.amplifyService.auth()
             .currentSession()
             .then(session => {
-                console.log('here');
+                // console.log('here');
                 return this.authService.getLoggedProfile().then(success => {
                     // Doing it to initialize everything properly
                     this.authService.setLoggedProfile(success);

@@ -1,6 +1,7 @@
 <ion-row *ngFor="let event of events_list">
     <ion-col size="12">
         <a routerLink="/signedin/events/event/{{event._id}}">
+            <p>eventname</p>
             <events-event-details [event]="event"></events-event-details>
         </a>
     </ion-col>

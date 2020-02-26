@@ -58,10 +58,16 @@ export class UsersUserProfileCreateOrUpdateComponent extends BaseComponent {
             });
     }
 
-    createLocationEntry(entry_type?: string, lat?: string, long?: string): LocationValue {
+    createLocationEntry(entry_type?: string, value?: string, privacy?: string, lat?: string, long?: string): UserProfileValue {
+        
+        const profile_entry = new UserProfileValue();
+        profile_entry.entryType = entry_type || this.entryType;
+        profile_entry.privacy = privacy || this.privacy;
         const location = new LocationValue();
         location.latitude = location.latitude || lat;
         location.longitude = location.longitude || long;
-        return location;
+        profile_entry.value = location;
+        console.log(location)
+        return profile_entry;
     }
 }

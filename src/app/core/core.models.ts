@@ -68,7 +68,7 @@ export namespace Users {
         @JsonProperty('privacy', String, true)
         privacy: string = undefined;
         @JsonProperty('value', StringOrNumberConverter, true)
-        value: string | number = undefined;
+        value: string | number |LocationValue = undefined;
     }
 
     @JsonObject()
@@ -99,7 +99,7 @@ export namespace Users {
     export class UserProfile extends CoreEntity {
         @JsonProperty('profileEntries', [UserProfileValue], true)
         profile: UserProfileValue[] = undefined;
-        @JsonProperty('location', LocationValue, true)
+        @JsonProperty('location', [Number,Number], true)
         location: LocationValue = undefined;
         @JsonProperty('userAccount', UserAccount)
         userAccount: UserAccount = undefined;
@@ -160,7 +160,7 @@ export namespace Events {
         eventEndTime: Moment = undefined;
         @JsonProperty('eventType', String, true)
         eventType: string = undefined;
-        @JsonProperty('location', LocationValue, true)
+        @JsonProperty('location', [Number,Number], true)
         location: LocationValue = undefined;
 
     }
