@@ -50,6 +50,12 @@ export class UsersUserProfileCreateOrUpdateComponent extends BaseComponent {
         return request;
     }
 
+    createRequestLocationData(location: LocationValue): CreateUserProfile.Request {
+            const request = new CreateUserProfile.Request();
+            request.location = location[0];
+            return request;
+    }
+
     createUserProfile(request: CreateUserProfile.Request) {
         this.user_profile_create$ = this.usersService.createOrUpdateUserProfile(request)
             .pipe( CommonsService.deserializeMap(CreateUserProfile.Response))
@@ -58,16 +64,12 @@ export class UsersUserProfileCreateOrUpdateComponent extends BaseComponent {
             });
     }
 
-    createLocationEntry(entry_type?: string, value?: string, privacy?: string, lat?: string, long?: string): UserProfileValue {
-        
-        const profile_entry = new UserProfileValue();
-        profile_entry.entryType = entry_type || this.entryType;
-        profile_entry.privacy = privacy || this.privacy;
+    createLocationEntry(entry_type?: string, lat?: string, long?: string): LocationValue {
+       
         const location = new LocationValue();
         location.latitude = location.latitude || lat;
         location.longitude = location.longitude || long;
-        profile_entry.value = location;
-        console.log(location)
-        return profile_entry;
+        // console.log(location)
+        return location;
     }
 }

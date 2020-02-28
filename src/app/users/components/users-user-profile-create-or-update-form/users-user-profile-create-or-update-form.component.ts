@@ -42,6 +42,17 @@ export class UsersUserProfileCreateOrUpdateFormComponent extends FormComponent {
         });
     }
 
+    createRequestLocationData(): LocationValue[] {
+        const array = [];
+
+        array.push(this.users_user_profile_create_or_update_component.createProfileEntry(
+            UserConstants.USER_PROFILE_ENTRY_NAME.LOCATION,
+            this.getInputModelValueAsString(UserConstants.USER_PROFILE_ENTRY_NAME.LOCATION), 'PUBLIC'));
+
+
+        return array;
+    }
+
     createRequestData(): UserProfileValue[] {
         const array = [];
         array.push(this.users_user_profile_create_or_update_component.createProfileEntry('WORK',
@@ -99,20 +110,23 @@ export class UsersUserProfileCreateOrUpdateSpecificFormComponent extends UsersUs
     createRequestData(entity_type?: string): Users.UserProfileValue[] {
         let array = [];
         entity_type = entity_type || this.entityType;
-        if (entity_type == 'WORK') {
-            // alert('LOCATION');
-            // console.log(array);
-            // array.push(
-            //     this.users_user_profile_create_or_update_component.createProfileEntry(entity_type,
-            //         this.getInputModelValueAsString(entity_type), 'PUBLIC'));
+        if (entity_type == 'LOCATION') {
+           
             array.push(
-                this.users_user_profile_create_or_update_component.createLocationEntry(entity_type,
-                    this.getInputModelValueAsString(entity_type), 'PUBLIC', this.lat, this.long));
+                this.users_user_profile_create_or_update_component.createLocationEntry(entity_type, this.lat, this.long));
         } else {
             array.push(
                 this.users_user_profile_create_or_update_component.createProfileEntry(entity_type,
                     this.getInputModelValueAsString(entity_type), 'PUBLIC'));
         }
+        return array;
+    }
+
+    createRequestLocationData(entity_type?: string): Users.LocationValue[] {
+        let array = [];
+        entity_type = entity_type || this.entityType;
+        array.push(
+            this.users_user_profile_create_or_update_component.createLocationEntry(entity_type, this.lat, this.long));
         return array;
     }
 

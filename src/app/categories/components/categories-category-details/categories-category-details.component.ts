@@ -17,6 +17,8 @@ export class CategoriesCategoryDetailsComponent extends BaseComponent {
     @Input()
     category: Category;
     @Input()
+    selected: Boolean;
+    @Input()
     categoryId: string;
 
     @Output()

@@ -55,13 +55,11 @@ export class CategoriesAllCategoriesWithSelectComponent extends CategoriesAllCat
 
     addOrRemoveCategory(category: Category) {
         const categoryIndex = this.getCategoryIndex(category);
-        console.log(categoryIndex);
         if (categoryIndex === -1) {
             this.selected_categories.push(category);
         } else {
             this.selected_categories = this.selected_categories.filter(value => value._id !== category._id);
         }
-        console.log(this.selected_categories);
         this.selectedCategoriesChanged.emit(this.selected_categories);
     }
 

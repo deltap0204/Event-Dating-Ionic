@@ -38,6 +38,7 @@ export class UsersService extends RestService {
     createOrUpdateUserProfile(request: CreateUserProfile.Request) {
         return this.getUserProfile()
             .pipe(flatMap(response => {
+                
                 return this.updateUserProfile(request);
             }), catchError(error => {
                 if (error.status === 404) {

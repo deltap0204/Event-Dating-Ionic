@@ -5,9 +5,15 @@
                                                        [userProfileValue]="userProfile|usersUserProfileToUserProfileValue:entityType"
                                                        #usersUserProfileFormComponent></users-user-profile-create-or-update-specific-form>
 </ion-content>
-<core-modal-footer
+<core-modal-footer *ngIf="entityType != 'LOCATION'"
         (actionClicked)="usersUserProfileFormComponent.users_user_profile_create_or_update_component.createUserProfile(
         usersUserProfileFormComponent.users_user_profile_create_or_update_component.createRequestData(usersUserProfileFormComponent.createRequestData()))"
+        [buttonText]="'UPDATE'"
+        [actionPromise]="usersUserProfileFormComponent.users_user_profile_create_or_update_component.user_profile_create$"
+        [buttonDisabled]="!usersUserProfileFormComponent.formGroup.valid"></core-modal-footer>
+<core-modal-footer *ngIf="entityType == 'LOCATION'"
+        (actionClicked)="usersUserProfileFormComponent.users_user_profile_create_or_update_component.createUserProfile(
+        usersUserProfileFormComponent.users_user_profile_create_or_update_component.createRequestLocationData(usersUserProfileFormComponent.createRequestLocationData()))"
         [buttonText]="'UPDATE'"
         [actionPromise]="usersUserProfileFormComponent.users_user_profile_create_or_update_component.user_profile_create$"
         [buttonDisabled]="!usersUserProfileFormComponent.formGroup.valid"></core-modal-footer>

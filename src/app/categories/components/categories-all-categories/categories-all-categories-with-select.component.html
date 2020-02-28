@@ -1,6 +1,6 @@
 <div *ngFor="let category of categories">
-    <div [class.bg-primary-grey-d]="getCategoryIndex(category)!==-1">
-        <categories-category-details-select-box [category]="category"
-                                                (click)="addOrRemoveCategory(category)"></categories-category-details-select-box>
-    </div>
+            <div [class.bg-primary-grey]="getCategoryIndex(category)!==-1">
+                <categories-category-details-select-box [category]="category" [selected]="getCategoryIndex(category)!==-1"
+                                                        (click)="addOrRemoveCategory(category)"></categories-category-details-select-box>
+            </div>
 </div>

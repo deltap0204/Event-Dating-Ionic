@@ -31,7 +31,7 @@ export class UserConstants {
         'SMOKING': 'SMOKING',
         'MARIJUANA': 'MARIJUANA',
         'DRUGS': 'DRUGS',
-        // 'LOCATION': 'LOCATION'
+        'LOCATION': 'LOCATION'
     };
 
     public static PROFILE_ENTRY_NAME_TO_HUMAN_READABLE = {
@@ -51,7 +51,7 @@ export class UserConstants {
         [UserConstants.USER_PROFILE_ENTRY_NAME.SMOKING]: 'Smoking',
         [UserConstants.USER_PROFILE_ENTRY_NAME.MARIJUANA]: 'Marijuana',
         [UserConstants.USER_PROFILE_ENTRY_NAME.DRUGS]: 'Drugs',
-        // [UserConstants.USER_PROFILE_ENTRY_NAME.LOCATION]: 'Location',
+        [UserConstants.USER_PROFILE_ENTRY_NAME.LOCATION]: 'Location',
     };
 
 
