@@ -1,14 +1,14 @@
 <core-modal-header [title]="'Update Value'" (closeClicked)="closeModal($event)"></core-modal-header>
 <ion-content [scrollEvents]="true" class="--bg-primary-ultra-light">
-    <users-user-profile-create-or-update-specific-form [entityType]="entityType"
+    <users-user-profile-create-or-update-specific-location-form 
+    
                                                        (userProfileChanged)="closeModal({status:'SUCCESS',data:$event})"
-                                                       [userProfileValue]="userProfile|usersUserProfileToUserProfileValue:entityType"
-                                                       #usersUserProfileFormComponent></users-user-profile-create-or-update-specific-form>
+                                                       [locationValue]="userProfile.location"
+                                                       #usersUserProfileFormComponent></users-user-profile-create-or-update-specific-location-form>
 </ion-content>
 <core-modal-footer 
         (actionClicked)="usersUserProfileFormComponent.users_user_profile_create_or_update_component.createUserProfile(
-        usersUserProfileFormComponent.users_user_profile_create_or_update_component.createRequestData(usersUserProfileFormComponent.createRequestData()))"
+        usersUserProfileFormComponent.users_user_profile_create_or_update_component.createRequestLocationData(usersUserProfileFormComponent.createRequestLocationData()))"
         [buttonText]="'UPDATE'"
         [actionPromise]="usersUserProfileFormComponent.users_user_profile_create_or_update_component.user_profile_create$"
         [buttonDisabled]="!usersUserProfileFormComponent.formGroup.valid"></core-modal-footer>
-

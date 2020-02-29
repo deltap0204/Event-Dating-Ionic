@@ -182,8 +182,4 @@ export const USER_PROFILE_CREATE_OR_UPDATE: DynamicFormControlModel[] = [
             {label: 'PREFER NOT TO SAY', value: 'PREFER_NOT_TO_SAY'},
         ], 'UNDERGRAD')
         .build(),
-    // new DynamicInputModelBuilder()
-    //     .getTextInputModel(UserConstants.USER_PROFILE_ENTRY_NAME.LOCATION, '', undefined, 'Location')
-    //     .build(),    
-
 ];

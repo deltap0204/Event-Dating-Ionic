@@ -64,7 +64,7 @@ export class UsersUserProfileCreateOrUpdateComponent extends BaseComponent {
             });
     }
 
-    createLocationEntry(entry_type?: string, lat?: string, long?: string): LocationValue {
+    createLocationEntry(entry_type?: string, lat?: number, long?: number): LocationValue {
        
         const location = new LocationValue();
         location.latitude = location.latitude || lat;

@@ -46,8 +46,8 @@ export class UsersUserProfileCreateOrUpdateFormComponent extends FormComponent {
         const array = [];
 
         array.push(this.users_user_profile_create_or_update_component.createProfileEntry(
-            UserConstants.USER_PROFILE_ENTRY_NAME.LOCATION,
-            this.getInputModelValueAsString(UserConstants.USER_PROFILE_ENTRY_NAME.LOCATION), 'PUBLIC'));
+            'location',
+            this.getInputModelValueAsString('location'), 'PUBLIC'));
 
 
         return array;
@@ -104,34 +104,41 @@ export class UsersUserProfileCreateOrUpdateSpecificFormComponent extends UsersUs
     @Input()
     userProfileValue: UserProfileValue;
 
-    lat: string;
-    long: string;
 
     createRequestData(entity_type?: string): Users.UserProfileValue[] {
         let array = [];
         entity_type = entity_type || this.entityType;
-        if (entity_type == 'LOCATION') {
-           
-            array.push(
-                this.users_user_profile_create_or_update_component.createLocationEntry(entity_type, this.lat, this.long));
-        } else {
             array.push(
                 this.users_user_profile_create_or_update_component.createProfileEntry(entity_type,
                     this.getInputModelValueAsString(entity_type), 'PUBLIC'));
-        }
         return array;
     }
+}
 
-    createRequestLocationData(entity_type?: string): Users.LocationValue[] {
+@Component({
+    selector: 'users-user-profile-create-or-update-specific-location-form',
+    templateUrl: './users-user-profile-create-or-update-specific-location-form.component.html',
+    styleUrls: ['./users-user-profile-create-or-update-form.component.scss'],
+})
+export class UsersUserProfileCreateOrUpdateSpecificLocationFormComponent extends UsersUserProfileCreateOrUpdateFormComponent {
+
+    @Input()
+    entityType: string;
+    @Input()
+    locationValue: LocationValue;
+
+    lat: number;
+    long: number;
+
+    createRequestLocationData(locationValue?: LocationValue): Users.LocationValue[] {
         let array = [];
-        entity_type = entity_type || this.entityType;
         array.push(
-            this.users_user_profile_create_or_update_component.createLocationEntry(entity_type, this.lat, this.long));
+            this.users_user_profile_create_or_update_component.createLocationEntry('', this.lat, this.long));
         return array;
     }
 
     getAddress(place: object) {
-        this.lat = String(place['geometry'].location.lat());
-        this.long = String(place['geometry'].location.lng());
+        this.lat = Number(place['geometry'].location.lat());
+        this.long = Number(place['geometry'].location.lng());
     }
 }

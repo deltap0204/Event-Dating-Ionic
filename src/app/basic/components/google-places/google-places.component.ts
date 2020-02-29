@@ -1,6 +1,8 @@
 /// <reference types="@types/googlemaps" />
-import { Component, ViewChild, EventEmitter, Output, OnInit, AfterViewInit, Input } from '@angular/core';
+import { Component,Injector, ViewChild, EventEmitter, Output, Input , AfterViewInit} from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import {BaseComponent} from '@core/components/base.component';
+
 
 
 @Component({
@@ -8,24 +10,33 @@ import { FormGroup, FormBuilder } from '@angular/forms';
   templateUrl:'./google-places.component.html',
   styleUrls:['./google-places.component.scss']
 })
-export class AutocompleteComponent implements OnInit, AfterViewInit {
+export class AutocompleteComponent extends BaseComponent implements AfterViewInit{
+
+    constructor(injector: Injector) {
+        super(injector);
+       
+       
+    }
+
+    initializeComponent() {
+       
+    }
 
     @Input() adressType: string;
-    @Output() setAddress: EventEmitter<any> = new EventEmitter();
+    @Output() setAddress: EventEmitter<Object> = new EventEmitter();
     @ViewChild('addresstext', {static: false}) addresstext: any;
 
     autocompleteInput: string;
     queryWait: boolean;
+   
 
-    constructor() {
-    }
-
-    ngOnInit() {
-    }
+   /* ngOnInit() {
+    }*/
 
     ngAfterViewInit() {
         this.getPlaceAutocomplete();
     }
+    
 
     private getPlaceAutocomplete() {
 

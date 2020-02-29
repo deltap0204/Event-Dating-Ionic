@@ -26,8 +26,8 @@ export class EventsCreateEventComponent extends FormComponent {
     formLayout: DynamicFormLayout = EVENTS_CREATE_EVENT_FORM_LAYOUT;
 
     create_event_subscription$: Subscription;
-    lat: string;
-    long: string;
+    lat: number;
+    long: number;
 
     constructor(protected eventsService: EventsService, injector: Injector) {
         super(injector);
@@ -69,8 +69,8 @@ export class EventsCreateEventComponent extends FormComponent {
     }
 
     getAddress(place: object) {
-        this.lat = String(place['geometry'].location.lat());
-        this.long = String(place['geometry'].location.lng());
+        this.lat = Number(place['geometry'].location.lat());
+        this.long = Number(place['geometry'].location.lng());
     }
 
 }

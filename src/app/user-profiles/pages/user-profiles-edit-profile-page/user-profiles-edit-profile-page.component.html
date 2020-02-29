@@ -14,6 +14,12 @@
         </ion-col>
     </ion-row>
     <ion-row class="m-2">
+            <ion-col [size]="12">
+                <users-user-profile-create-or-update-location-modal 
+                                                           [userProfile]="loggedProfile"></users-user-profile-create-or-update-location-modal>
+            </ion-col>
+        </ion-row>
+    <ion-row class="m-2">
         <ion-col [size]="6" class="p-3">
             <ion-label class="font-black font-weight-bold ion-text-uppercase fs-11 ellipses-2">
                 My Virtues
@@ -134,11 +140,6 @@
                                                        [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
         </ion-col>
     </ion-row>
-    <ion-row class="m-2">
-        <ion-col [size]="12">
-            <users-user-profile-create-or-update-modal [entityType]="'LOCATION'"
-                                                       [userProfile]="loggedProfile"></users-user-profile-create-or-update-modal>
-        </ion-col>
-    </ion-row>
+    
 
 </ion-content>

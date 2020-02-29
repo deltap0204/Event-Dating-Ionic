@@ -1,32 +1,14 @@
-<form *ngIf="entityType != 'LOCATION'" [formGroup]="formGroup" #profileUpdateForm="ngForm"
+<form [formGroup]="formGroup" #profileUpdateForm="ngForm"
       (submit)="usersUserProfileCreateOrUpdateComponent.createUserProfile(usersUserProfileCreateOrUpdateComponent.createRequestData(createRequestData()))">
     <ion-row>
         <ion-col [size]="12">
-            <div class="pos-relative" *ngIf="entityType != 'LOCATION'">
+            <div class="pos-relative" >
                 <dynamic-ionic-form-control [group]="formGroup"
                                             [model]="formModelMap[entityType]" #profile></dynamic-ionic-form-control>
                 <core-form-validation-message [controlComponent]="profile"
                                               [control]="profile.control"></core-form-validation-message>
             </div>
-            <div class="pos-relative" *ngIf="entityType == 'LOCATION'">
-                <AutocompleteComponent (setAddress)="getAddress($event)" adressType="geocode" ></AutocompleteComponent>
-            </div>
-        </ion-col>
-    </ion-row>
-</form>
-<form *ngIf="entityType == 'LOCATION'" [formGroup]="formGroup" #profileUpdateForm="ngForm"
-      (submit)="usersUserProfileCreateOrUpdateComponent.createUserProfile(usersUserProfileCreateOrUpdateComponent.createRequestLocationData(createRequestLocationData()))">
-    <ion-row>
-        <ion-col [size]="12">
-            <div class="pos-relative" *ngIf="entityType != 'LOCATION'">
-                <dynamic-ionic-form-control [group]="formGroup"
-                                            [model]="formModelMap[entityType]" #profile></dynamic-ionic-form-control>
-                <core-form-validation-message [controlComponent]="profile"
-                                              [control]="profile.control"></core-form-validation-message>
-            </div>
-            <div class="pos-relative" *ngIf="entityType == 'LOCATION'">
-                <AutocompleteComponent (setAddress)="getAddress($event)" adressType="geocode" ></AutocompleteComponent>
-            </div>
+            
         </ion-col>
     </ion-row>
 </form>

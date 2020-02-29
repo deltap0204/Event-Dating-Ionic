@@ -20,7 +20,8 @@ import {UsersUserProfileCreateOrUpdateComponent} from '@users/components/users-u
 // tslint:disable-next-line:max-line-length
 import {
     UsersUserProfileCreateOrUpdateFormComponent,
-    UsersUserProfileCreateOrUpdateSpecificFormComponent
+    UsersUserProfileCreateOrUpdateSpecificFormComponent,
+    UsersUserProfileCreateOrUpdateSpecificLocationFormComponent
 } from '@users/components/users-user-profile-create-or-update-form/users-user-profile-create-or-update-form.component';
 import {UsersUserProfileUpdatePageComponent} from '@users/pages/users-user-profile-update-page/users-user-profile-update-page.component';
 import {
@@ -51,6 +52,12 @@ import {UsersUserCognitoLogoutComponent} from '@users/components/users-user-cogn
 import {UsersUserProfileCreateOrUpdateModalComponent} from '@users/components/users-user-profile-create-or-update-modal/users-user-profile-create-or-update-modal.component';
 // tslint:disable-next-line:max-line-length
 import {UsersUserProfileCreateOrUpdateModalContentComponent} from '@users/components/users-user-profile-create-or-update-modal/users-user-profile-create-or-update-modal-content/users-user-profile-create-or-update-modal-content.component';
+import {UsersUserProfileCreateOrUpdateLocationModalComponent} from '@users/components/users-user-profile-create-or-update-location-modal/users-user-profile-create-or-update-location-modal.component';
+// tslint:disable-next-line:max-line-length
+import {UsersUserProfileCreateOrUpdateLocationModalContentComponent} from '@users/components/users-user-profile-create-or-update-location-modal/users-user-profile-create-or-update-location-modal-content/users-user-profile-create-or-update-location-modal-content.component';
+
+
+
 import {
     UsersAllUsersProfilesComponent,
     UsersAllUsersProfilesNoTemplateComponent
@@ -86,8 +93,12 @@ import {AutocompleteComponent} from '@basic/components/google-places/google-plac
         UsersUserCognitoLogoutComponent,
         UsersUserProfileCreateOrUpdateModalComponent,
         UsersUserProfileCreateOrUpdateModalContentComponent,
+
+        UsersUserProfileCreateOrUpdateLocationModalComponent,
+        UsersUserProfileCreateOrUpdateLocationModalContentComponent,
         UsersUserProfileEntryNameToHumanReadablePipe,
         UsersUserProfileCreateOrUpdateSpecificFormComponent,
+        UsersUserProfileCreateOrUpdateSpecificLocationFormComponent,
         UsersAllUsersProfilesComponent,
         UsersAllUsersProfilesNoTemplateComponent,
         AutocompleteComponent
@@ -126,14 +137,18 @@ import {AutocompleteComponent} from '@basic/components/google-places/google-plac
         UsersUserCognitoLogoutComponent,
         UsersUserProfileCreateOrUpdateModalComponent,
         UsersUserProfileCreateOrUpdateModalContentComponent,
+
+        UsersUserProfileCreateOrUpdateLocationModalComponent,
+        UsersUserProfileCreateOrUpdateLocationModalContentComponent,
         UsersUserProfileEntryNameToHumanReadablePipe,
         UsersUserProfileCreateOrUpdateSpecificFormComponent,
+        UsersUserProfileCreateOrUpdateSpecificLocationFormComponent,
         UsersAllUsersProfilesComponent,
         UsersAllUsersProfilesNoTemplateComponent,
         AutocompleteComponent
 
     ],
-    entryComponents: [UsersUserProfileCreateOrUpdateModalContentComponent]
+    entryComponents: [UsersUserProfileCreateOrUpdateModalContentComponent,UsersUserProfileCreateOrUpdateLocationModalContentComponent]
 })
 export class UsersModule {
 }
