@@ -52,12 +52,15 @@ export class EventsCreateEventComponent extends FormComponent {
         request.eventType = event_type || this.getInputModelValueAsString('event_type');
         request.eventStartTime = event_start_time || this.getDateModelValue('event_start_time');
         request.eventEndTime = event_end_time || this.getDateModelValue('event_end_time');
-        location = new LocationValue();
-        location.latitude = location.latitude || this.lat;
-        location.longitude = location.longitude || this.long;
-        request.location = location;
+        const location_value = new LocationValue();
+        // console.log(location);
+        location_value.latitude =  this.lat;
+        location_value.longitude = this.long;
+        request.location = location_value;
         return request;
     }
+
+    
 
     createEvent(request: CreateEvent.Request) {
         this.create_event_subscription$ =

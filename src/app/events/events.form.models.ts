@@ -13,7 +13,7 @@ export const EVENTS_CREATE_EVENT_FORM_MODEL: DynamicFormControlModel[] = [
         .build(),
     new DynamicInputModelBuilder()
         .getTextInputModel('location', '', undefined, 'Location')
-        .addValidatorAndErrorMessage('REQUIRED', 'id')
+       // .addValidatorAndErrorMessage('REQUIRED', 'id')
         .build(),    
     new DynamicInputModelBuilder().getRadioGroupInputModel('event_type', '', [
         {label: 'Event Brite', value: 'EVENT_BRITE'},

@@ -18,8 +18,9 @@
                 <core-form-validation-message [controlComponent]="eventDescription"
                                               [control]="eventDescription.control"></core-form-validation-message>
             </div>
+            
             <div class="pos-relative">
-                <AutocompleteComponent (setAddress)="getAddress($event)" adressType="geocode" ></AutocompleteComponent>
+                <AutocompleteComponent  (setAddress)="getAddress($event)" adressType="geocode" ></AutocompleteComponent>
             </div>
             
             <div class="pos-relative">

@@ -10,4 +10,4 @@
 <core-modal-footer
         (actionClicked)="eventsCreateEventComponent.createEvent(eventsCreateEventComponent.createRequestData())"
         [buttonText]="'ADD ACTIVITY'" [actionPromise]="eventsCreateEventComponent.create_event_subscription$"
-        ></core-modal-footer>
+        [buttonDisabled]="!eventsCreateEventComponent.formGroup.valid"></core-modal-footer>

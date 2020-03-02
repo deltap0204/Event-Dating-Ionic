@@ -22,7 +22,6 @@ export class AutocompleteComponent extends BaseComponent implements AfterViewIni
        
     }
 
-    @Input() adressType: string;
     @Output() setAddress: EventEmitter<Object> = new EventEmitter();
     @ViewChild('addresstext', {static: false}) addresstext: any;
 
@@ -43,7 +42,6 @@ export class AutocompleteComponent extends BaseComponent implements AfterViewIni
         const autocomplete = new google.maps.places.Autocomplete(this.addresstext.nativeElement,
             {
                 componentRestrictions: { country: 'US' },
-                types: [this.adressType]  // 'establishment' / 'address' / 'geocode'
             });
         google.maps.event.addListener(autocomplete, 'place_changed', () => {
             const place = autocomplete.getPlace();
@@ -56,4 +54,3 @@ export class AutocompleteComponent extends BaseComponent implements AfterViewIni
     }
 
 }
-

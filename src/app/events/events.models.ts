@@ -11,7 +11,6 @@ export namespace EventRequests {
         import ArrayToLocationValueConverter = Users.ArrayToLocationValueConverter;
         import LocationValue = Users.LocationValue;
         import Event = Events.Event;
-
         @JsonObject()
         export class Request {
             @JsonProperty('eventDescription', String, true)

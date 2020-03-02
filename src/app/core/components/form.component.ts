@@ -16,7 +16,6 @@ import {CommonsService} from '@core/commons.service';
 import {Moment} from 'moment';
 import {AppDynamicFormControlModelArrayToDynamicFormControlModelMapPipe} from '@core/core.pipe';
 import validator from 'validator';
-
 export abstract class FormComponent extends BaseComponent implements AfterViewInit {
 
     formGroup: FormGroup;

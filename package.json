@@ -64,7 +64,6 @@
     "mime-types": "^2.1.25",
     "moment": "^2.24.0",
     "ng-busy": "^7.0.0",
-    "ngx-google-places-autocomplete": "^2.0.4",
     "ngx-international-phone-number": "^1.0.4",
     "ngx-moment": "^3.3.0",
     "ngx-restangular": "^5.0.0",

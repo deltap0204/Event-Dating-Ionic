@@ -1,12 +1,13 @@
 <ion-row>
     <ion-label class="font-black font-weight-bold fs-10 ellipses-2">
         Location
+       
     </ion-label>
 </ion-row>
 <ion-row class="font-primary-grey fs-9 ">
     <ion-col [size]="6" class="p-3">
         <ion-label>
-            {{(userProfile.location.latitude ) }}, {{(userProfile.location.latitude) || 'Add Value'}}
+               <p id="address"> {{ 'Add Value'}}</p>
         </ion-label>
     </ion-col>
     <ion-col [size]="6">
@@ -15,4 +16,3 @@
         </ion-button>
     </ion-col>
 </ion-row>
-

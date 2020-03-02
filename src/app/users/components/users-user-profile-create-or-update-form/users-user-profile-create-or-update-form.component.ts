@@ -42,17 +42,6 @@ export class UsersUserProfileCreateOrUpdateFormComponent extends FormComponent {
         });
     }
 
-    createRequestLocationData(): LocationValue[] {
-        const array = [];
-
-        array.push(this.users_user_profile_create_or_update_component.createProfileEntry(
-            'location',
-            this.getInputModelValueAsString('location'), 'PUBLIC'));
-
-
-        return array;
-    }
-
     createRequestData(): UserProfileValue[] {
         const array = [];
         array.push(this.users_user_profile_create_or_update_component.createProfileEntry('WORK',
@@ -108,9 +97,9 @@ export class UsersUserProfileCreateOrUpdateSpecificFormComponent extends UsersUs
     createRequestData(entity_type?: string): Users.UserProfileValue[] {
         let array = [];
         entity_type = entity_type || this.entityType;
-            array.push(
-                this.users_user_profile_create_or_update_component.createProfileEntry(entity_type,
-                    this.getInputModelValueAsString(entity_type), 'PUBLIC'));
+        array.push(
+            this.users_user_profile_create_or_update_component.createProfileEntry(entity_type,
+                this.getInputModelValueAsString(entity_type), 'PUBLIC'));
         return array;
     }
 }
@@ -127,18 +116,16 @@ export class UsersUserProfileCreateOrUpdateSpecificLocationFormComponent extends
     @Input()
     locationValue: LocationValue;
 
-    lat: number;
-    long: number;
+    latitude: number;
+    longitude: number;
 
-    createRequestLocationData(locationValue?: LocationValue): Users.LocationValue[] {
-        let array = [];
-        array.push(
-            this.users_user_profile_create_or_update_component.createLocationEntry('', this.lat, this.long));
-        return array;
+
+    createRequestLocationData(): Users.LocationValue {
+        return this.users_user_profile_create_or_update_component.createLocationEntry(this.latitude, this.longitude);
     }
 
     getAddress(place: object) {
-        this.lat = Number(place['geometry'].location.lat());
-        this.long = Number(place['geometry'].location.lng());
+        this.latitude = Number(place['geometry'].location.lat());
+        this.longitude = Number(place['geometry'].location.lng());
     }
 }

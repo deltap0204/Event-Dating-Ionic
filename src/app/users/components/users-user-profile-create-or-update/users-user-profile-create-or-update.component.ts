@@ -9,6 +9,7 @@ import CreateUserProfile = UserRequests.CreateUserProfile;
 import UserProfileValue = Users.UserProfileValue;
 import LocationValue = Users.LocationValue;
 
+
 @Component({
     selector: 'users-user-profile-create-or-update',
     templateUrl: './users-user-profile-create-or-update.component.html',
@@ -17,6 +18,8 @@ import LocationValue = Users.LocationValue;
 export class UsersUserProfileCreateOrUpdateComponent extends BaseComponent {
     @Input()
     entryType: string;
+    @Input()
+    location: LocationValue;
     @Input()
     value: string;
     @Input()
@@ -50,9 +53,9 @@ export class UsersUserProfileCreateOrUpdateComponent extends BaseComponent {
         return request;
     }
 
-    createRequestLocationData(location: LocationValue): CreateUserProfile.Request {
-            const request = new CreateUserProfile.Request();
-            request.location = location[0];
+    createRequestLocationData(location_value?: LocationValue): CreateUserProfile.Request {
+            let request = new CreateUserProfile.Request();
+            request.location = location_value;
             return request;
     }
 
@@ -63,13 +66,12 @@ export class UsersUserProfileCreateOrUpdateComponent extends BaseComponent {
                 this.userProfileCreated.emit(value);
             });
     }
-
-    createLocationEntry(entry_type?: string, lat?: number, long?: number): LocationValue {
+  
+    createLocationEntry(lat?: number, long?: number): LocationValue {
        
         const location = new LocationValue();
         location.latitude = location.latitude || lat;
         location.longitude = location.longitude || long;
-        // console.log(location)
         return location;
     }
 }
