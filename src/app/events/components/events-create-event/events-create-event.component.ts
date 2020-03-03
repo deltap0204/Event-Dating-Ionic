@@ -1,13 +1,13 @@
-import {Component, EventEmitter, Injector, Input, Output} from '@angular/core';
-import {FormComponent} from '@core/components/form.component';
-import {DynamicFormControlModel, DynamicFormLayout} from '@ng-dynamic-forms/core';
-import {EventRequests} from '@events/events.models';
-import {Moment} from 'moment';
-import {Users} from '@core/core.models';
-import {CommonsService} from '@core/commons.service';
-import {EventsService} from '@events/events.service';
-import {EVENTS_CREATE_EVENT_FORM_LAYOUT, EVENTS_CREATE_EVENT_FORM_MODEL} from '@events/events.form.models';
-import {Subscription} from 'rxjs';
+import { Component, EventEmitter, Injector, Input, Output } from '@angular/core';
+import { FormComponent } from '@core/components/form.component';
+import { DynamicFormControlModel, DynamicFormLayout } from '@ng-dynamic-forms/core';
+import { EventRequests } from '@events/events.models';
+import { Moment } from 'moment';
+import { Users } from '@core/core.models';
+import { CommonsService } from '@core/commons.service';
+import { EventsService } from '@events/events.service';
+import { EVENTS_CREATE_EVENT_FORM_LAYOUT, EVENTS_CREATE_EVENT_FORM_MODEL } from '@events/events.form.models';
+import { Subscription } from 'rxjs';
 import CreateEvent = EventRequests.CreateEvent;
 import LocationValue = Users.LocationValue;
 
@@ -29,8 +29,11 @@ export class EventsCreateEventComponent extends FormComponent {
     lat: number;
     long: number;
 
+    invalidLocation: boolean;
+
     constructor(protected eventsService: EventsService, injector: Injector) {
         super(injector);
+        this.invalidLocation=true;
     }
 
     getFormModel(): DynamicFormControlModel[] {
@@ -45,7 +48,7 @@ export class EventsCreateEventComponent extends FormComponent {
     }
 
     createRequestData(event_name?: string, event_description?: string, event_type?: string, event_start_time?: Moment,
-                      event_end_time?: Moment, location?: LocationValue): CreateEvent.Request {
+        event_end_time?: Moment, location?: LocationValue): CreateEvent.Request {
         const request = new CreateEvent.Request();
         request.eventName = event_name || this.getInputModelValueAsString('event_name');
         request.eventDescription = event_description || this.getInputModelValueAsString('event_description');
@@ -54,13 +57,13 @@ export class EventsCreateEventComponent extends FormComponent {
         request.eventEndTime = event_end_time || this.getDateModelValue('event_end_time');
         const location_value = new LocationValue();
         // console.log(location);
-        location_value.latitude =  this.lat;
+        location_value.latitude = this.lat;
         location_value.longitude = this.long;
         request.location = location_value;
         return request;
     }
 
-    
+
 
     createEvent(request: CreateEvent.Request) {
         this.create_event_subscription$ =
@@ -72,6 +75,9 @@ export class EventsCreateEventComponent extends FormComponent {
     }
 
     getAddress(place: object) {
+        if (typeof place === 'object') {
+            this.invalidLocation=false;
+        }
         this.lat = Number(place['geometry'].location.lat());
         this.long = Number(place['geometry'].location.lng());
     }
