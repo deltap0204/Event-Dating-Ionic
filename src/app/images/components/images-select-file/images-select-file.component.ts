@@ -5,7 +5,8 @@ import {FileBlob, SelectedFile} from '@images/images.models';
 import {ImagesSelectPhotoNoTemplateComponent} from '@images/components/images-select-photo/images-select-photo.component';
 import {ImagesCapturePhotoNoTemplateComponent} from '@images/components/images-capture-photo/images-capture-photo.component';
 import {PhotoViewer} from '@ionic-native/photo-viewer/ngx';
-import {File} from '@ionic-native/file';
+import {File} from '@ionic-native/file/ngx';
+import { urlType } from 'aws-sdk/clients/sts';
 
 @Component({
   selector: 'images-select-file',
@@ -34,7 +35,7 @@ export class ImagesSelectFileComponent extends BaseComponent {
   // copied from
   // https://devdactic.com/ionic-4-image-upload-storage/
 
-  constructor(injector: Injector) {
+  constructor(injector: Injector,private file: File) {
     super(injector);
     this.photo_viewer = injector.get(PhotoViewer);
     this.actionSheetController = injector.get(ActionSheetController);
@@ -73,13 +74,13 @@ export class ImagesSelectFileComponent extends BaseComponent {
   }
 
   makeFileUrlIntoFile(imagePath) {
-   /* File.resolveLocalFilesystemUrl(imagePath).then((fileEntry) => {
-// @ts-ignore
+    this.file.resolveLocalFilesystemUrl(imagePath).then((fileEntry) => {
+  // @ts-ignore
       fileEntry.file((resFile) => {
         console.log(resFile);
         this.readFile(resFile);
       });
-    }); */
+    }); 
   }
 
   readFile(file: any) {
