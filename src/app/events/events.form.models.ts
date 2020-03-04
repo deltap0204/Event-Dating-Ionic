@@ -11,10 +11,6 @@ export const EVENTS_CREATE_EVENT_FORM_MODEL: DynamicFormControlModel[] = [
         .getTextInputModel('event_description', '', undefined, 'Describe what you want to do')
         .addValidatorAndErrorMessage('REQUIRED', 'id')
         .build(),
-    new DynamicInputModelBuilder()
-        .getTextInputModel('location', '', undefined, 'Location')
-    //    .addValidatorAndErrorMessage('REQUIRED', 'id')
-        .build(),    
     new DynamicInputModelBuilder().getRadioGroupInputModel('event_type', '', [
         {label: 'Event Brite', value: 'EVENT_BRITE'},
         {label: 'ACTIVITY', value: 'ACTIVITY'}

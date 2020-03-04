@@ -95,7 +95,7 @@ export class UsersUserProfileCreateOrUpdateSpecificFormComponent extends UsersUs
 
 
     createRequestData(entity_type?: string): Users.UserProfileValue[] {
-        let array = [];
+        const array = [];
         entity_type = entity_type || this.entityType;
         array.push(
             this.users_user_profile_create_or_update_component.createProfileEntry(entity_type,
