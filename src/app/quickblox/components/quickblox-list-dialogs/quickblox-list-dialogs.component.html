@@ -1,9 +1,0 @@
-<div *ngIf="quickblox_dialogs">
-  <div *ngFor="let item of quickblox_dialogs.items">
-    <a routerLink="/dialogs/{{item.id}}">
-      <quickblox-get-dialog-item [dialogItem]="item"></quickblox-get-dialog-item>
-    </a>
-  </div>
-</div>
-
-
