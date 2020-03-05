@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <p class="text-center font-weight-bold txt-uppercase fs-12">Signin</p>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="--bg-primary-ultra-light">
+    <div class="maxw-500p m-auto">
+        <ion-row class="pt-3">
+            <ion-col>
+                <users-user-cognito-login
+                        (signInSuccess)="usersUserProfileComponent.getUserProfile()"></users-user-cognito-login>
+                <users-user-profile-no-template (userProfileReceived)="setUserProfileAndNavigate($event)"
+                                    #usersUserProfileComponent></users-user-profile-no-template>
+            </ion-col>
+        </ion-row>
+        <ion-row class="pt-3">
+            <ion-button class="h-3 m-auto" color="primary" expand="block" type="submit" fill="outline"
+                        routerLink="/basic/user/signup"
+                        [expand]="'block'">
+                Signup
+            </ion-button>
+
+        </ion-row>
+    </div>
+</ion-content>

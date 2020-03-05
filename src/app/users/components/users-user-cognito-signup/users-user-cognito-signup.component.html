@@ -1,0 +1,42 @@
+<ion-row>
+  <ion-col [size]="12">
+    <form [formGroup]="formGroup" #userSignUpForm="ngForm" (submit)="signUp(createRequestData())"
+          class="mt-2">
+      <div class="pos-relative">
+        <div class="mt-2 mb-2">
+          <dynamic-ionic-form-control [group]="formGroup"
+                                      [layout]="formLayout"
+                                      [model]="formModelMap['user_name']"
+                                      #phoneNumber></dynamic-ionic-form-control>
+          <core-form-validation-message [controlComponent]="phoneNumber"
+                                           [control]="phoneNumber.control"></core-form-validation-message>
+        </div>
+      </div>
+      <div class="pos-relative">
+        <dynamic-ionic-form-control [group]="formGroup"
+                                    [layout]="formLayout"
+                                    [model]="formModelMap['email']" #userName></dynamic-ionic-form-control>
+        <core-form-validation-message [controlComponent]="userName"
+                                         [control]="userName.control"></core-form-validation-message>
+      </div>
+      <div class="pos-relative">
+        <dynamic-ionic-form-control [group]="formGroup"
+                                    [layout]="formLayout"
+                                    [model]="formModelMap['password']" #password></dynamic-ionic-form-control>
+        <core-form-validation-message [controlComponent]="password"
+                                         [control]="password.control"></core-form-validation-message>
+        <p class="mt-1 mb-2 mr-4 ml-4 font-primary-dark fs-9">
+          Password should contain minimum of 6 characters with atleast one number, one lowercase letter (Ex: example123)
+        </p>
+      </div>
+      <div class="pt-2 pr-3 pl-3">
+        <ion-button class="h-3" color="primary" expand="block" type="submit" fill="outline"
+                    [disabled]="!userSignUpForm.form.valid"
+                    [promiseBtn]="user_cognito_sign_up_subscription$">Register
+        </ion-button>
+      </div>
+    </form>
+  </ion-col>
+</ion-row>
+
+

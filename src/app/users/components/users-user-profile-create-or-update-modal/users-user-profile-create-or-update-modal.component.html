@@ -1,0 +1,18 @@
+<ion-row>
+    <ion-label class="font-black font-weight-bold fs-10 ellipses-2">
+        {{entityType|usersUserProfileEntryNameToHumanReadable}}
+    </ion-label>
+</ion-row>
+<ion-row class="font-primary-grey fs-9 ">
+    <ion-col [size]="6" class="p-3">
+        <ion-label>
+            {{((userProfile|usersUserProfileToUserProfileValue:entityType)?.value) || 'Add Value'}}
+        </ion-label>
+    </ion-col>
+    <ion-col [size]="6">
+        <ion-button fill="clear" size="small" class="float-right" color="medium" (click)="openModal()">
+            <fa-icon icon="pencil-alt"></fa-icon>
+        </ion-button>
+    </ion-col>
+</ion-row>
+

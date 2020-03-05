@@ -1,0 +1,18 @@
+<ion-row>
+    <ion-col size="12">
+        <form [formGroup]="formGroup" #storyCreateForm="ngForm"
+              (keydown)="onKeyDown($event)"
+              (keyup)="onKeyUp($event)">
+            <dynamic-ionic-form-control
+                    [group]="formGroup"
+                    [model]="formModelMap['message']"
+                    (blur)="onBlur()"></dynamic-ionic-form-control>
+        </form>
+        <ion-button (click)="createMessage(createRequestData())" [disabled]="!formGroup.valid" class="float-right">
+            <ion-icon name="send"></ion-icon>
+        </ion-button>
+        <quickblox-create-and-upload-file
+                (fileUploaded)="attachments=quickblox_create_and_upload_file_response_to_attachment_pipe.transform($event)"
+                #quickbloxCreateAndUploadFileComponent></quickblox-create-and-upload-file>
+    </ion-col>
+</ion-row>

@@ -1,0 +1,14 @@
+<ion-row class="pt-2 pb-2 pr-0 pl-0 text-left" *ngIf="userProfile">
+    <ion-col size="3">
+        <images-by-entity-and-type-sm [entity]="userProfile.userAccount._id" [entityType]="'USER_ACCOUNT'"
+                                      [alt]="(userProfile|usersUserProfileToUserProfileValue:'NAME').value"></images-by-entity-and-type-sm>
+    </ion-col>
+    <ion-col size="9">
+        <ion-row>
+            <ion-col>
+                <ion-label
+                        class="fs-11 pr-3">{{(userProfile|usersUserProfileToUserProfileValue:'NAME').value}}</ion-label>
+            </ion-col>
+        </ion-row>
+    </ion-col>
+</ion-row>

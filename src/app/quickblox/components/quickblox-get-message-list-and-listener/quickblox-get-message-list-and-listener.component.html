@@ -1,0 +1,10 @@
+<div>
+    <quickblox-message-listener
+            (quickbloxMessageReceived)="listNoTemplate.getMessages(listNoTemplate.createRequestData($event.id,$event.dialog_id))"></quickblox-message-listener>
+    <quickblox-get-message-list-no-template-no-initialize
+            (quickbloxMessagesReceived)="listComponent.quickbloxMessageAdded.emit($event)"
+            #listNoTemplate></quickblox-get-message-list-no-template-no-initialize>
+    <quickblox-get-message-list-no-template [chatDialogId]="dialogItem.id" [sortAsc]="true"
+                                            (quickbloxMessagesReceived)="quickblox_messages=$event"
+                                            #listComponent></quickblox-get-message-list-no-template>
+</div>

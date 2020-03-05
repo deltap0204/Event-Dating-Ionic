@@ -1,0 +1,12 @@
+<div class="row pt-2 pb-2 pr-0 pl-0 text-left bg-primary" *ngIf="category">
+  <div class="col-md-4">
+    {{category._id}}
+  </div>
+  <div class="col-md-4">
+    {{category.name}}
+    <p>Types: <span *ngFor="let type of category.categoryType">{{type}},</span></p>
+  </div>
+  <div class="col-md-4">
+    {{category.description}}
+  </div>
+</div>

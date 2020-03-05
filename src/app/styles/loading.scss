@@ -1,0 +1,58 @@
+@import "theme-variables";
+
+.spinner {
+  display: none;
+}
+
+.loader {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: var(--primary-grey-e);
+  height: 100%;
+  padding-top: 3.5rem;
+}
+
+.image-loader {
+  display: none;
+  width: 100%;
+  height: 50%;
+}
+
+.is-loading > .loader {
+  display: block !important;
+}
+
+.is-loading > .image-loader {
+  display: block !important;
+}
+
+.is-loading > .spinner {
+  display: inline-block !important;
+}
+
+.overlay {
+  z-index: 400000;
+}
+
+#loading-bar {
+  opacity: 0.8 !important;
+}
+
+.calendar > .is-loading > .loader {
+  height: 100ch;
+}
+
+.calendar > .is-loading > .loader > div {
+  top: 20% !important;
+}
+
+.search > .is-loading > .loader {
+  height: 100vh;
+  z-index: 0;
+}
+
+.no-spinner.is-loading > .spinner{
+  display: none !important;
+}

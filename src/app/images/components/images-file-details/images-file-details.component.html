@@ -1,0 +1,10 @@
+<div *ngIf="uploadedFile">
+  <img src="{{uploadedFile.fileUrl}}" class="d-inherit img-sm-circular br-max  b-0 img-border-light m-auto"
+  >
+</div>
+<div *ngIf="!uploadedFile && alt">
+  <p class="img-sm-circular text-center font-white fs-15 br-max b-0 img-border-light m-auto"
+     [ngStyle]="{'background-color' : 'hsl(' + ((alt.toString().charAt(0).toUpperCase().charCodeAt(0) - 64) * 13) + ', 42%, 62%)'}">
+    {{alt.toString().charAt(0).toUpperCase()}}
+  </p>
+</div>

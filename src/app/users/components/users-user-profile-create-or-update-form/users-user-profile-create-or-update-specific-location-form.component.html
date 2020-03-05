@@ -1,0 +1,11 @@
+<form  [formGroup]="formGroup" #profileUpdateForm="ngForm"
+      (submit)="usersUserProfileCreateOrUpdateComponent.createUserProfile(usersUserProfileCreateOrUpdateComponent.createRequestLocationData(createRequestLocationData()))">
+    <ion-row>
+        <ion-col [size]="12">
+            <div class="pos-relative" >
+                <AutocompleteComponent (setAddress)="getAddress($event)" adressType="geocode" ></AutocompleteComponent>
+            </div>
+        </ion-col>
+    </ion-row>
+</form>
+<users-user-profile-create-or-update #usersUserProfileCreateOrUpdateComponent></users-user-profile-create-or-update>

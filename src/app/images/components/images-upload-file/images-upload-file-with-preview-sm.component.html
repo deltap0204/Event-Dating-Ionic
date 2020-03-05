@@ -1,0 +1,19 @@
+<images-select-file-no-template
+        (fileSelected)="selected_file=$event"
+        (fileReceived)="file_blob=$event;fileReceived.emit($event);createFileUploadRequestComponent.createFileUploadRequest(createFileUploadRequestComponent.createRequestData($event.file.name))"
+        #selectFileNoTemplateComponent></images-select-file-no-template>
+<div *ngIf="!selected_file"
+     (click)="selectFileNoTemplateComponent.selectImage()">
+    <p class="img-md-circular text-center fs-9 br-max b-0 img-border-light m-auto">
+        Add Image
+    </p>
+</div>
+
+<div *ngIf="selected_file">
+    <img src="{{convertFileSrc(selected_file.file_url)}}"
+         class="d-inherit img-md-circular br-max  b-0 img-border-light m-auto">
+</div>
+
+<images-create-file-upload-request [entity]="entity" [entityType]="entityType"
+                                   (fileUploadRequestCreated)="uploaded_file=$event;uploadFileFromBlob(file_blob.blob,$event.fileUploadUrl,createFileUploadRequestComponent.getFileContentType(selected_file.file_name))"
+                                   #createFileUploadRequestComponent></images-create-file-upload-request>
