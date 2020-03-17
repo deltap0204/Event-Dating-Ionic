@@ -21,8 +21,14 @@
                     {{(usersUserProfileByUserNoTemplateComponent.user_profile|usersUserProfileToUserProfileValue:'NAME').value}}
                 </ion-label>
             </div>
+
+            <ion-button  color="clear" fill="clear" class="btnView">View</ion-button>
+            <ion-button  color="clear" fill="clear" class="btnMessage">Message</ion-button>
+            
             <div *ngIf="quickbloxListDialogsNoTemplateComponent.quickblox_dialogs?.items?.length">
                 <div *ngFor="let item of quickbloxListDialogsNoTemplateComponent.quickblox_dialogs.items">
+                    
+
                     <ion-label class="float-left">
                         {{item.last_message}}
                     </ion-label>
