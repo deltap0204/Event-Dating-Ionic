@@ -3,7 +3,7 @@ import {DynamicInputModelBuilder} from '@core/dynamic-input-model-builder';
 
 export const CREATE_MESSAGE_MODEL: DynamicFormControlModel[] = [
     new DynamicInputModelBuilder()
-        .getTextAreaInputModel('message', undefined, 'Type a message', 3)
+        .getTextAreaInputModel('message', undefined, 'Type an message', 3)
         .addValidator('REQUIRED')
         .build()
 ];
