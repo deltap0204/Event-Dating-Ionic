@@ -17,6 +17,7 @@ const routes: Routes = [
         resolve: {quickbloxSession: QuickbloxSessionResolver},
         canActivate: [AuthGuard]
     },  { path: 'usermatchpage', loadChildren: './usermatchpage/usermatchpage.module#UsermatchpagePageModule' },
+  { path: 'categoryevent', loadChildren: './categoryevent/categoryevent.module#CategoryeventPageModule' },
 
 ];
 

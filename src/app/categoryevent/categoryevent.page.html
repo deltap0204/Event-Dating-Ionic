@@ -1,0 +1,126 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>categoryevent</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-content>
+    <ion-grid class="evendetails">
+        <ion-row class="listheading">
+            <ion-col>
+                <h2>Plan an Activity</h2>
+                <span class="closeevent">x</span>
+            </ion-col>
+        </ion-row>
+        <ion-row class="listview">
+            <ion-col [size]="12">
+                <ion-item>
+                    <ion-label position="stacked">What do you want to do?</ion-label>
+                    <ion-input type="text" placeholder="Add what you want to do Activity Name"></ion-input>
+                </ion-item>
+                <ion-item class="addloaction">
+                    <img src="../../../../assets/images/mapicon3.png">
+
+                    <ion-label position="stacked">Plan Location of your Activity</ion-label>
+                    <ion-input type="Location" placeholder="Add Location"></ion-input>
+                </ion-item>
+                <ion-item class="dateinfo">
+                    <img src="../../../../assets/images/calender.png">
+                    <ion-label position="stacked">Plan Start date & time of activity</ion-label>
+                    <ion-input type="calender" placeholder="Add Date & Time"></ion-input>
+                </ion-item>
+                <ion-item class="dateinfo">
+                    <img src="../../../../assets/images/calender.png">
+                    <ion-label position="stacked">Plan End date & time of activity</ion-label>
+                    <ion-input type="calender" placeholder="Add End & Time"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col [size]="12" class="chcekbox_details">
+                <ion-label class="add_heading">Plan Category of your Activity</ion-label>
+                <ion-radio-group>
+                    <ion-item lines="none" class="checkbox_cont">
+                        <div class="checkbox">
+
+                            <div class="check_opt">
+                                <img src="../../../../assets/images/eventicon1.png">
+                                <ion-radio slot="start" value="bikeriding"></ion-radio>
+                            </div>
+                            <ion-label fixed class="fixedLabel ">Bike Riding</ion-label>
+                        </div>
+                    </ion-item>
+
+                    <ion-item lines="none" class="checkbox_cont">
+                        <div class="checkbox">
+
+                            <div class="check_opt">
+                                <img src="../../../../assets/images/eventicon2.png">
+                                <ion-radio slot="start" value="trekking"></ion-radio>
+                            </div>
+                            <ion-label fixed class="fixedLabel ">Trekking</ion-label>
+                        </div>
+                    </ion-item>
+
+                    <ion-item lines="none" class="checkbox_cont">
+                        <div class="checkbox">
+
+                            <div class="check_opt">
+                                <img src="../../../../assets/images/eventicon3.png">
+                                <ion-radio slot="start" value="weekend"></ion-radio>
+                            </div>
+                            <ion-label fixed class="fixedLabel "> Weekend</ion-label>
+                        </div>
+                    </ion-item>
+                    <ion-item lines="none" class="checkbox_cont">
+                        <div class="checkbox">
+
+                            <div class="check_opt">
+                                <img src="../../../../assets/images/eventicon3.png">
+                                <ion-radio slot="start" value="weekend"></ion-radio>
+                            </div>
+                            <ion-label fixed class="fixedLabel "> Weekend</ion-label>
+                        </div>
+                    </ion-item>
+
+                    <ion-item lines="none" class="checkbox_cont">
+                        <div class="checkbox">
+
+                            <div class="check_opt">
+                                <img src="../../../../assets/images/eventicon3.png">
+                                <ion-radio slot="start" value="weekend"></ion-radio>
+                            </div>
+                            <ion-label fixed class="fixedLabel "> Weekend</ion-label>
+                        </div>
+                    </ion-item>
+
+
+                </ion-radio-group>
+
+
+
+            </ion-col>
+
+            <ion-col [size]="12" class="add_photocontent">
+                <ion-label class="add_heading">Add photo of your ACTIVITY</ion-label>
+
+                <div class="add_photo">
+                    <div class="scrolling_add">
+                        <span class="close_pic">x</span>
+                        <img src="../../../../assets/images/add_banner.png">
+                    </div>
+                    <div class="inpfileupload">
+                        <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+                        <p>Add Photo</p>
+                        <ion-input type="file" accept="image/*" class="fileupload_img"></ion-input>
+                    </div>
+                </div>
+
+
+            </ion-col>
+
+            <ion-col [size]="12" class="def_btn">
+                <ion-button>Add ACTIVITY</ion-button>
+
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,205 @@
+.evendetails {
+    padding: 15px;
+    position: relative;
+    span.closeevent {
+        position: absolute;
+        right: 0px;
+        top: 13px;
+        font-size: 33px;
+        padding: 5px;
+    }
+    ion-item {
+        --padding-start: 0px;
+        --padding-end: 0px;
+        position: relative;
+        margin-bottom: 3px;
+        p {
+            padding: 3px 0 0;
+            margin: 0px;
+        }
+        img {
+            position: absolute;
+            right: 0;
+            bottom: 6px;
+            pointer-events: none;
+        }
+    }
+    ion-label {
+        max-width: 100% !important;
+        color: #929292 !important;
+        font-weight: 600;
+        font-size: 17px !important;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        display: flex;
+        overflow: initial !important;
+    }
+    .add_heading {
+        max-width: 100% !important;
+        color: #929292 !important;
+        font-weight: 600;
+        font-size: 13px !important;
+        text-transform: uppercase;
+        padding-bottom: 10px;
+        padding: 9px 5px 10px;
+        margin: 0px;
+    }
+    input::placeholder {
+        color: #000 !important;
+        font-weight: 600 !important;
+        font-size: 13px !important;
+    }
+    .item-native {
+        --padding-start: 0px;
+        --padding-end: 0px;
+    }
+    .check_opt {
+        border-radius: 10px;
+        background: #999999;
+        padding: 10px;
+    }
+    .error {
+        color: red
+    }
+    .check_opt {
+        border-radius: 10px;
+        background: #999999;
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        img {
+            position: relative;
+            bottom: initial;
+            width: 60px;
+        }
+    }
+    .chcekbox_details {
+        padding: 0px !important;
+        border-bottom: 1px solid #dedede;
+    }
+    .chcekbox_details ion-radio-group {
+        white-space: nowrap;
+        /* overflow: hidden; */
+        display: flex;
+        overflow-y: scroll;
+        ion-radio {
+            --color: #FFFF;
+            --color-checked: #75D154;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+    }
+    .checkbox_cont {
+        margin: 0px 10px;
+        overflow: initial !important;
+        --inner-padding-end: 0px;
+        // width: 100px !important;
+        // max-width: 100% !important;
+        // min-width: 100px !important;
+    }
+    .fixedLabel {
+        font-size: 14px !important;
+        font-weight: 400;
+        min-width: 100% !important;
+        padding: 10px;
+        max-width: 100% !important;
+    }
+}
+
+.def_btn {
+    text-align: center;
+    position: relative;
+    img {
+        width: 100%;
+    }
+    ion-button {
+        width: 90%;
+        border: 2px solid #9d87f4 !important;
+        color: #9d87f4 !important;
+        background: transparent !important;
+        --background: #fff !important;
+        border-radius: 4px;
+        font-weight: 600;
+        margin: 0px 5%;
+        --color-activated: #9d87f4;
+        --color-focused: #9d87f4;
+        @if (isSelected) {
+            –ion-color-base: yellow!important;
+        }
+    }
+}
+
+.inpfileupload {
+    background: #e1e1e3;
+    width: 135px;
+    text-align: center;
+    height: 80px;
+    padding: 0px;
+    border-radius: 10px;
+    position: relative;
+    margin: 0px 5px 5px;
+    ion-icon {
+        font-size: 33px;
+        color: #fff;
+        padding: 10px 0 0;
+    }
+    p {
+        color: #000;
+        font-size: 16px;
+        padding: 0px;
+        margin: 0px;
+        font-weight: 600;
+    }
+    ion-input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+}
+
+.scrolling_add {
+    background: #e1e1e3;
+    width: 135px;
+    text-align: center;
+    height: 80px;
+    padding: 0px;
+    border-radius: 10px;
+    position: relative;
+    margin: 0px 5px 5px;
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+    .close_pic {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        color: #000;
+        background: yellow;
+        border-radius: 50%;
+        box-shadow: 0px 0px 5px #000;
+    }
+}
+
+.add_photo {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.add_photocontent {
+    padding: 0px !important;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 15px !important;
+    margin-bottom: 15px;
+}
