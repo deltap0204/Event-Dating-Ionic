@@ -40,10 +40,9 @@ export class ChatsUserChatComponent extends BaseComponent {
     getUserChat = (request: GetUserChat.Request) => {
         this.chatService.getUserChat(request).pipe(CommonsService.deserializeMap(GetUserChat.Response))
             .subscribe(value => {
-                
+                console.log(value);
                 
                 this.userChat = value;
-                console.log("Partha: " + this.userChat);
                 this.userChatReceived.emit(value);
             });
     }

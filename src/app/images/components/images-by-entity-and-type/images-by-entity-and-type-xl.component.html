@@ -5,8 +5,7 @@
 </ion-slides>
 <ion-slides pager="true" [options]="slideOpts" class="h-100" *ngIf="!uploadedFiles?.length">
     <ion-slide>
-        <p class="img-xl text-center font-white"
-           [ngStyle]="{'background-color' : 'hsl(' + ((alt.toString().charAt(0).toUpperCase().charCodeAt(0) - 64) * 13) + ', 42%, 62%)'}">
+        <p class="img-xl text-center font-white" [ngStyle]="{'background-color' : 'hsl(' + ((alt.toString().charAt(0).toUpperCase().charCodeAt(0) - 64) * 13) + ', 42%, 62%)'}">
             No Image
         </p>
     </ion-slide>

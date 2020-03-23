@@ -19,7 +19,7 @@ export class ImagesCreateFileUploadRequestComponent extends BaseComponent {
     @Input()
     name: string;
     @Input()
-    entity: string; 
+    entity: string;
 
     @Output()
     fileUploadRequestCreated = new EventEmitter<UploadedFile>();

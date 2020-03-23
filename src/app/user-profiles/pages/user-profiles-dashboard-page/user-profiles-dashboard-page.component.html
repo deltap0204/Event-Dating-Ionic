@@ -3,7 +3,7 @@
     <div *ngIf="allUsersProfilesNoTemplateComponentcore.user_profiles?.length">
         <div *ngFor="let user_profile of (allUsersProfilesNoTemplateComponentcore.user_profiles|appArrayRandomItem|appConvertToArray)">
             <div *ngIf="user_profile">
-                <ion-row>
+                <!-- <ion-row>
                     <ion-col [size]="6" class="p-3">
                         <ion-label class="font-black font-weight-bold ion-text-uppercase fs-12 ellipses-2">
                             {{(user_profile|usersUserProfileToUserProfileValue:'NAME').value}}
@@ -87,8 +87,215 @@
                 </ion-row>
                 <ion-row>
                     <users-user-profile-value-fa-icon-quote></users-user-profile-value-fa-icon-quote>
-                </ion-row>
+                </ion-row> -->
                 <!-- <events-get-events></events-get-events> -->
+                <!-- 21.03.2020 -->
+
+
+                <ion-row>
+                    <ion-col [size]="6" class="p-3">
+                        <ion-label class="font-black font-weight-bold ion-text-uppercase fs-12 ellipses-2">
+                            {{(user_profile|usersUserProfileToUserProfileValue:'NAME').value}}
+                        </ion-label>
+                    </ion-col>
+                    <ion-col [size]="6" class="p-3">
+                        <ion-label class="font-black div-pull-right ion-text-uppercase fs-10 ellipses-2">
+                            Toronto
+                            <fa-icon [icon]="'map-marker-alt'"></fa-icon>
+                        </ion-label>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col class=" slider_cont ">
+                        <!-- <images-by-entity-and-type-xl [entity]="user_profile.userAccount._id" [entityType]="'USER_ACCOUNT'" [alt]="(user_profile|usersUserProfileToUserProfileValue:'NAME').value"></images-by-entity-and-type-xl> -->
+                        <ion-slides autoplay="5000" loop="true" speed="500" pager="false">
+                            <ion-slide>
+                                <img src="../../../../assets/images/banner_pic.jpg">
+                            </ion-slide>
+
+                            <ion-slide>
+                                <img src="../../../../assets/images/banner_pic.jpg">
+                            </ion-slide>
+                        </ion-slides>
+
+                    </ion-col>
+                </ion-row>
+                <ion-row class="icon_view">
+                    <ion-col>
+                        <div class="closeicon" (click)="allUsersProfilesNoTemplateComponentcore.getAllUserProfiles(allUsersProfilesNoTemplateComponentcore.createRequestData())">
+                            <img src="../../../../assets/images/closeicon.png">
+                        </div>
+                        <div class="user_profile" routerLink="/usermatchpage" routerDirection="root">
+                            <img src="../../../../assets/images/fev-icon.png">
+                        </div>
+
+                    </ion-col>
+                </ion-row>
+                <ion-row class="detailsview">
+                    <ion-col [size]="12">
+                        <ion-label class="font-black font-weight-bold ion-text-uppercase fs-10 ellipses-2 def_padding">
+                            ABOUT ME
+                        </ion-label>
+                    </ion-col>
+                    <ion-col [size]="12" class="profileinfo_details">
+                        <div class="profileinfo">
+                            <!-- <span>
+                                <users-user-profile-value-fa-icon
+                                        [userProfileValue]="(user_profile|usersUserProfileToUserProfileValue:'AGE')"></users-user-profile-value-fa-icon>
+                            </span>
+                            <span>
+                                <users-user-profile-value-fa-icon-gender
+                                        [userProfileValue]="(user_profile|usersUserProfileToUserProfileValue:'GENDER')"></users-user-profile-value-fa-icon-gender>
+                            </span>
+                            <span>
+                                <users-user-profile-value-fa-icon
+                                        [userProfileValue]="(user_profile|usersUserProfileToUserProfileValue:'DRINKING')"></users-user-profile-value-fa-icon>
+        
+                            </span>
+                            <span>
+                                <users-user-profile-value-fa-icon
+                                        [userProfileValue]="(user_profile|usersUserProfileToUserProfileValue:'SMOKING')"></users-user-profile-value-fa-icon>
+                            </span> -->
+                            <span>
+                                <img src="../../../../assets/images/icon1.png">
+                                <em>32</em>
+                            </span>
+                            <span>
+                                <img src="../../../../assets/images/icon2.png">
+                                <em>64</em>
+                            </span>
+                            <span>
+                                <img src="../../../../assets/images/icon3.png">
+                                <em>5'3</em>
+                            </span>
+                            <span>
+                                <img src="../../../../assets/images/icon4.png">
+                                <em>Yes</em>
+                            </span>
+                        </div>
+                    </ion-col>
+                    <ion-col [size]="12">
+                        <div class="details_cont">
+                            <p><img src="../../../../assets/images/icon-v1.png">Information Security @ Tech Mahindra </p>
+                            <p><img src="../../../../assets/images/icon-v2.png">The Ontaria College of Art and Design University </p>
+                            <p><img src="../../../../assets/images/icon-v3.png">Pennsylvania </p>
+                        </div>
+                    </ion-col>
+
+
+                </ion-row>
+                <div class="block_add">
+                    <ion-row class="nofication_details">
+                        <ion-col [size]="12">
+                            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-10 ellipses-2">
+                                After Work You can Find me
+                            </ion-label>
+                        </ion-col>
+                        <ion-col [size]="12">
+                            <div class="nofication_info">
+                                <users-user-profile-value-fa-icon-quote></users-user-profile-value-fa-icon-quote>
+                                <div class="user_profile" routerLink="/usermatchpage" routerDirection="root">
+                                    <img src="../../../../assets/images/fev-icon.png">
+                                </div>
+
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="add_content">
+                        <ion-col [size]="12">
+                            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-10 ellipses-2 titleinfo ">
+                                <em>I want to go for Hiking in thr Rocky Mountains</em>
+                                <strong>Activity</strong>
+                            </ion-label>
+                            <div class="addressinfo">
+                                <span class="location_map">
+                                <img src="../../../../assets/images/mapicon.png">
+                                Circuit of Americas
+                            </span>
+                                <div class="calender_info">
+                                    <img src="../../../../assets/images/calender_icon.png">
+                                    <strong>Apr.12 - Apr.14</strong>
+                                </div>
+                            </div>
+                        </ion-col>
+                        <ion-col [size]="12">
+                            <div class="add_block">
+                                <div class="post_date">
+                                    <img src="../../../../assets/images/clock.png">
+                                    <span>7.30 AM</span>
+                                </div>
+                                <div class="add_img">
+                                    <img src="../../../../assets/images/add_banner.png">
+                                </div>
+                            </div>
+                        </ion-col>
+                        <ion-col [size]="12" class="icon_view">
+                            <div class="closeicon likeinfo">
+                                <img src="../../../../assets/images/like.png">
+                            </div>
+                            <div class="user_profile">
+                                <img src="../../../../assets/images/mapicon2.png">
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </div>
+                <div class="block_add">
+                    <ion-row class="nofication_details">
+                        <ion-col [size]="12">
+                            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-10 ellipses-2">
+                                After Work You can Find me
+                            </ion-label>
+                        </ion-col>
+                        <ion-col [size]="12">
+                            <div class="nofication_info">
+                                <users-user-profile-value-fa-icon-quote></users-user-profile-value-fa-icon-quote>
+                                <div class="user_profile" routerLink="/usermatchpage" routerDirection="root">
+                                    <img src="../../../../assets/images/fev-icon.png">
+                                </div>
+
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row class="add_content">
+                        <ion-col [size]="12">
+                            <ion-label class="font-black font-weight-bold ion-text-uppercase fs-10 ellipses-2 titleinfo ">
+                                <em>I want to go for Hiking in thr Rocky Mountains</em>
+                                <strong>EvenT</strong>
+                            </ion-label>
+                            <div class="addressinfo">
+                                <span class="location_map">
+                                <img src="../../../../assets/images/mapicon.png">
+                                Circuit of Americas
+                            </span>
+                                <div class="calender_info">
+                                    <img src="../../../../assets/images/calender_icon.png">
+                                    <strong>Apr.12 - Apr.14</strong>
+                                </div>
+                            </div>
+                        </ion-col>
+                        <ion-col [size]="12">
+                            <div class="add_block">
+                                <div class="post_date">
+                                    <img src="../../../../assets/images/clock.png">
+                                    <span>7.30 AM</span>
+                                </div>
+                                <div class="add_img">
+                                    <img src="../../../../assets/images/add_banner.png">
+                                </div>
+                            </div>
+                        </ion-col>
+                        <ion-col [size]="12" class="icon_view">
+                            <div class="closeicon likeinfo">
+                                <img src="../../../../assets/images/like.png">
+                            </div>
+                            <div class="user_profile">
+                                <img src="../../../../assets/images/mapicon2.png">
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </div>
+
+
             </div>
         </div>
     </div>

@@ -16,7 +16,8 @@ const routes: Routes = [
         loadChildren: '@chat/chat.module#ChatModule',
         resolve: {quickbloxSession: QuickbloxSessionResolver},
         canActivate: [AuthGuard]
-    },
+    },  { path: 'usermatchpage', loadChildren: './usermatchpage/usermatchpage.module#UsermatchpagePageModule' },
+
 ];
 
 @NgModule({
