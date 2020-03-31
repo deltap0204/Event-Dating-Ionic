@@ -72,10 +72,16 @@ export class TokenInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (!request.url.includes('s3.amazonaws.com')) {
             return CommonsService.promiseToObservable(this.amplifyService.auth().currentSession()).pipe(concatMap(
-                session => {
+                
+                
+                
+                
+                (session:any) => {
                     request = request.clone({
                         headers: new HttpHeaders({
                             'Authorization': `Bearer ${session.getIdToken().getJwtToken()}`
+                            //'Authorization': `Bearer ${session.getIdToken().getJwtToken()}`
+                            
                         })
                     });
                     return next.handle(request);
