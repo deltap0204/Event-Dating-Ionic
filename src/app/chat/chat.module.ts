@@ -16,6 +16,7 @@ import {UsersModule} from '@users/users.module';
 import {ImagesModule} from '@images/images.module';
 import {ChatsUserChatsByDialogIdComponent} from '@chat/components/chats-user-chats-by-dialog-id/chats-user-chats-by-dialog-id.component';
 import {ChatUserChatByDialogIdAndOtherProfileResolver, ChatUserChatByDialogIdResolver} from '@chat/chat.resolver';
+import { ChatsUserRequestsComponent } from './components/chats-user-requests/chats-user-requests.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {ChatUserChatByDialogIdAndOtherProfileResolver, ChatUserChatByDialogIdRes
         ChatsUserAccountsToOtherAccountPipe,
         ChatsUserChatsByDialogIdComponent,
         ChatsUserAccountsToSameAccountPipe,
-        ChatsUserChatsNoTemplateComponent
+        ChatsUserChatsNoTemplateComponent,
+        ChatsUserRequestsComponent
     ],
     imports: [
         CoreModule,
@@ -46,7 +48,8 @@ import {ChatUserChatByDialogIdAndOtherProfileResolver, ChatUserChatByDialogIdRes
         ChatsUserAccountsToOtherAccountPipe,
         ChatsUserChatsByDialogIdComponent,
         ChatsUserAccountsToSameAccountPipe,
-        ChatsUserChatsNoTemplateComponent
+        ChatsUserChatsNoTemplateComponent,
+        ChatsUserRequestsComponent
     ],
     providers: [
         ChatUserChatByDialogIdResolver,

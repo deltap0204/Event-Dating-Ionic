@@ -7,6 +7,8 @@ import CreateUserChat = ChatRequests.CreateUserChat;
 import GetUserChats = ChatRequests.GetUserChats;
 import GetUserChat = ChatRequests.GetUserChat;
 import GetUserChatsByDialogId = ChatRequests.GetUserChatsByDialogId;
+import GetUserRequests = ChatRequests.GetUserChats
+
 
 @Injectable({
     providedIn: 'root'
@@ -34,5 +36,9 @@ export class ChatService extends RestService {
 
     getUserChatsByDialogId(request: GetUserChatsByDialogId.Request) {
         return this.chatService.one('dialogs').customGET('', this.serialize(request));
+    }
+
+    getUserRequest(request: GetUserRequests.Request) {
+        return this.chatService.one('').get();
     }
 }
