@@ -42,9 +42,7 @@
                 "input": "src/global.scss"
               }
             ],
-            "scripts": [
-              "node_modules/quickblox/quickblox.min.js"
-            ]
+            "scripts": ["node_modules/quickblox/quickblox.min.js"]
           },
           "configurations": {
             "production": {

@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <p class="text-center font-weight-bold txt-uppercase fs-12">My Vitals</p>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="--bg-primary-ultra-light">
+  <div class="maxw-500p m-auto">
+    <ion-row class="pt-3">
+      <ion-col>
+        <!-- <ion-button>
+          <ion-img width="25" height="25" src="school-outline"></ion-img>
+          Education
+        </ion-button> -->
+        <ion-segment [(ngModel)]="segment" style="background: #3b6593;">
+          <ion-segment-button value="user" style="color: white;" icon-left>
+            User Info
+          </ion-segment-button>
+          <ion-segment-button value="card">
+            Card Info
+          </ion-segment-button>
+          <ion-segment-button value="change">
+            Change Password
+          </ion-segment-button>
+          <ion-segment-button value="change1">
+            Change Password
+          </ion-segment-button>
+        </ion-segment>
+
+        <div [ngSwitch]="segment">
+          <ion-card *ngSwitchCase="'user'">
+            <ion-card-header>
+              User Info
+            </ion-card-header>
+            <ion-card-content>
+              Your user info content here
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngSwitchCase="'card'">
+            <ion-card-header>
+              Card Info
+            </ion-card-header>
+            <ion-card-content>
+              Your card info content here
+            </ion-card-content>
+          </ion-card>
+
+          <ion-card *ngSwitchCase="'change'">
+            <ion-card-header>
+              Change Password
+            </ion-card-header>
+            <ion-card-content>
+              Your change password form here
+            </ion-card-content>
+          </ion-card>
+          <ion-card *ngSwitchCase="'change1'">
+            <ion-card-header>
+              Change Password
+            </ion-card-header>
+            <ion-card-content>
+              Your change password form here
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
+
+<ion-row>
+  <ion-col>
+    <ion-button expand="block">NEXT </ion-button>
+  </ion-col>
+</ion-row>

@@ -1,65 +1,67 @@
-import {Injectable, Injector} from '@angular/core';
-import {Users} from '@core/core.models';
-import {Params} from '@angular/router';
-import {StorageService} from '@core/storage.service';
-import {CommonsService} from '@core/commons.service';
+import { Injectable, Injector } from "@angular/core";
+import { Users } from "@core/core.models";
+import { Params } from "@angular/router";
+import { StorageService } from "@core/storage.service";
+import { CommonsService } from "@core/commons.service";
 import UserProfile = Users.UserProfile;
 
 export const SESSION_KEYS = {
-    'SESSION_USER_PROFILE': 'user_profile',
-    'SESSION_STORAGE_NAMESPACE': 'com.hhlife',
+  SESSION_USER_PROFILE: "user_profile",
+  SESSION_STORAGE_NAMESPACE: "com.hhlife",
 };
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: "root",
 })
 export class AuthService {
+  userProfile: UserProfile;
+  redirectState: RedirectState;
 
+  protected storageService: StorageService;
 
-    userProfile: UserProfile;
-    redirectState: RedirectState;
+  constructor(injector: Injector) {
+    this.storageService = injector.get(StorageService);
+  }
 
-    protected storageService: StorageService;
+  clearAll() {
+    this.storageService.clear();
+    this.redirectState = null;
+    this.userProfile = null;
+    this.setLoggedProfile(null);
+  }
 
-    constructor(injector: Injector) {
-        this.storageService = injector.get(StorageService);
-    }
+  setLoggedProfile(user_profile: Users.UserProfile): Promise<any> {
+    this.userProfile = user_profile;
+    console.log("user_profile", user_profile);
+    return this.storageService.set(
+      SESSION_KEYS.SESSION_USER_PROFILE,
+      CommonsService.serialize(user_profile)
+    );
+  }
 
-    clearAll() {
-        this.storageService.clear();
-        this.redirectState = null;
-        this.userProfile = null;
-        this.setLoggedProfile(null);
-    }
+  getLoggedProfile(): Promise<UserProfile> {
+    return this.storageService
+      .get(SESSION_KEYS.SESSION_USER_PROFILE)
+      .then((success) => {
+        return CommonsService.deserialize(success, UserProfile);
+      });
+  }
 
-    setLoggedProfile(user_profile: Users.UserProfile): Promise<any> {
-        this.userProfile = user_profile;
-        return this.storageService.set(SESSION_KEYS.SESSION_USER_PROFILE, CommonsService.serialize(user_profile));
-    }
+  setRedirectState(redirect_state: RedirectState) {
+    this.redirectState = redirect_state;
+  }
 
-    getLoggedProfile(): Promise<UserProfile> {
-        return this.storageService.get(SESSION_KEYS.SESSION_USER_PROFILE)
-            .then(success => {
-                return CommonsService.deserialize(success, UserProfile);
-            });
-    }
-
-    setRedirectState(redirect_state: RedirectState) {
-        this.redirectState = redirect_state;
-    }
-
-    getRedirectState(): RedirectState {
-        return this.redirectState;
-    }
+  getRedirectState(): RedirectState {
+    return this.redirectState;
+  }
 }
 
 export class RedirectState {
-    url: string;
-    queryParams: Params;
+  url: string;
+  queryParams: Params;
 
-
-    constructor(url?: string, queryParams?: Params) {
-        this.url = url;
-        this.queryParams = queryParams;
-    }
+  constructor(url?: string, queryParams?: Params) {
+    this.url = url;
+    this.queryParams = queryParams;
+  }
 }
